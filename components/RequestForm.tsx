@@ -21,7 +21,7 @@ const timings = [
   "As soon as you can",
   "This week",
   "Next week",
-  "Flexible — I have a date in mind",
+  "Flexible, I have a date in mind",
 ];
 
 export function RequestForm({ defaultService }: { defaultService?: string }) {
@@ -85,7 +85,7 @@ export function RequestForm({ defaultService }: { defaultService?: string }) {
 
   return (
     <form onSubmit={onSubmit} noValidate={false} className="grid gap-5">
-      {/* Honeypot — real people never see it, bots fill it in. */}
+      {/* Honeypot: real people never see it, bots fill it in. */}
       <div aria-hidden="true" className="absolute h-px w-px overflow-hidden opacity-0">
         <label htmlFor="company">Company</label>
         <input id="company" name="company" tabIndex={-1} autoComplete="off" />
@@ -167,7 +167,7 @@ export function RequestForm({ defaultService }: { defaultService?: string }) {
               {s.name}
             </option>
           ))}
-          <option value="Not sure yet">Not sure yet — tell me what it needs</option>
+          <option value="Not sure yet">Not sure yet, tell me what it needs</option>
         </select>
       </label>
 
@@ -216,7 +216,7 @@ export function RequestForm({ defaultService }: { defaultService?: string }) {
           className="control"
           name="notes"
           rows={4}
-          placeholder="Dog in the car, coffee spill on the passenger carpet, swirls under the streetlight — the more you tell us, the more accurate the quote."
+          placeholder="Dog in the car, coffee spill on the passenger carpet, swirls under the streetlight. The more you tell us, the more accurate the quote."
         />
       </label>
 
@@ -242,8 +242,8 @@ export function RequestForm({ defaultService }: { defaultService?: string }) {
           Or call{" "}
           <a href={site.phone.href} className="link-inline">
             {site.phone.display}
-          </a>{" "}
-          — usually faster.
+          </a>
+          . Usually faster.
         </p>
       </div>
     </form>

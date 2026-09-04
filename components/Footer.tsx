@@ -42,7 +42,7 @@ export function Footer() {
                   <div key={h.days} className="flex gap-3">
                     <dt className="w-32 shrink-0 text-muted">{h.days}</dt>
                     <dd className="text-silver">
-                      {h.open ? `${h.open} – ${h.close}` : "By appointment"}
+                      {h.open ? `${h.open} to ${h.close}` : "By appointment"}
                     </dd>
                   </div>
                 ))}
@@ -50,7 +50,7 @@ export function Footer() {
             ) : (
               <p className="mt-6 text-sm text-silver">
                 By appointment, seven days a week. Early mornings and evenings
-                are normal for us — call and ask.
+                are normal for us. Call and ask.
               </p>
             )}
           </div>

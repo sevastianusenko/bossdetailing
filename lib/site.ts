@@ -6,7 +6,7 @@
 export const site = {
   name: "Boss Auto Detailing",
   legalName: "Boss Auto Detailing LLC",
-  tagline: "Mobile auto detailing — Vancouver, WA and Portland, OR",
+  tagline: "Mobile auto detailing in Vancouver, WA and Portland, OR",
   url: "https://autodetailingwa.com",
   domain: "autodetailingwa.com",
 
@@ -32,14 +32,14 @@ export const site = {
   /**
    * Set to true only once the client confirms real hours. While false the
    * site says "by appointment" everywhere and emits NO openingHours into
-   * LocalBusiness schema — an invented schedule in structured data is worse
+   * LocalBusiness schema. An invented schedule in structured data is worse
    * than none at all.
    */
   hoursConfirmed: false,
 
-  /** PLACEHOLDER — industry-typical hours, unused until hoursConfirmed. */
+  /** PLACEHOLDER. Industry-typical hours, unused until hoursConfirmed. */
   hours: [
-    { days: "Monday – Friday", open: "08:00", close: "18:00" },
+    { days: "Monday to Friday", open: "08:00", close: "18:00" },
     { days: "Saturday", open: "09:00", close: "16:00" },
     { days: "Sunday", open: "", close: "" },
   ],
@@ -64,7 +64,7 @@ export const nav: { label: string; href: string }[] = [
 /** Formats a schema.org openingHours specification from `site.hours`. */
 export function openingHoursSpecification() {
   const map: Record<string, string[]> = {
-    "Monday – Friday": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "Monday to Friday": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
     Saturday: ["Saturday"],
     Sunday: ["Sunday"],
   };

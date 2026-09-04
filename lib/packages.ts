@@ -1,6 +1,6 @@
 /**
  * ─────────────────────────────────────────────────────────────────────────
- *  PLACEHOLDER PRICING — MUST BE CONFIRMED BY THE CLIENT BEFORE LAUNCH.
+ *  PLACEHOLDER PRICING. MUST BE CONFIRMED BY THE CLIENT BEFORE LAUNCH.
  *
  *  The client has not supplied a price list. Every dollar figure below is a
  *  market-rate estimate for mobile detailing in the Vancouver WA / Portland
@@ -35,9 +35,9 @@ export const packages: Pkg[] = [
     name: "Maintenance",
     positioning: "For a car that is already in good shape and you intend to keep that way.",
     fromPrice: 189,
-    duration: "2–3 hours",
+    duration: "2-3 hours",
     summary:
-      "The recurring visit. Safe hand wash, wheels done properly, interior reset — booked on an interval so the car never gets far enough gone to need rescuing.",
+      "The recurring visit. Safe hand wash, wheels done properly, interior reset, booked on an interval so the car never gets far enough gone to need rescuing.",
     includes: [
       "Foam pre-soak and two-bucket contact wash",
       "Wheel faces, barrels and tires by hand",
@@ -58,7 +58,7 @@ export const packages: Pkg[] = [
     name: "Signature Detail",
     positioning: "The full reset, inside and out. Our most-booked service.",
     fromPrice: 389,
-    duration: "5–8 hours",
+    duration: "5-8 hours",
     featured: true,
     summary:
       "Everything in Maintenance, plus the two stages that actually change how a car looks and smells: hot-water extraction inside, and full chemical and clay decontamination outside.",
@@ -80,7 +80,7 @@ export const packages: Pkg[] = [
     name: "Correction & Coating",
     positioning: "For dark paint, resale value, or a car you plan to keep.",
     fromPrice: 1290,
-    duration: "2–4 days",
+    duration: "2-4 days",
     summary:
       "Machine correction to remove swirls and wash marring from the clear coat, then a ceramic coating over the corrected finish so the result is locked in rather than washed away.",
     includes: [

@@ -27,26 +27,26 @@ const PORTRAIT = [1100, 1467];
 
 const manifest = [
   // Home
-  { file: "hero.jpg", id: 9966016, size: WIDE, grade: { brightness: 1.06, a: 1.06, b: -2 } },
+  { file: "hero.jpg", id: 4876639, size: WIDE, grade: { brightness: 0.92, a: 1.1, b: -10 } },
   { file: "rig.jpg", id: 20042048, size: CARD },
   { file: "area.jpg", id: 32403749, size: WIDE },
 
   // Services
   { file: "interior-detailing.jpg", id: 5233285, size: CARD, grade: { saturation: 0.5, cool: true } },
-  { file: "exterior-detailing.jpg", id: 6873174, size: CARD, grade: { saturation: 0.5, brightness: 0.9, cool: true } },
+  { file: "exterior-detailing.jpg", id: 7154632, size: CARD },
   { file: "paint-correction.jpg", id: 5233258, size: CARD },
   { file: "ceramic-coating.jpg", id: 17216298, size: CARD },
   { file: "headlight-restoration.jpg", id: 4870702, size: CARD },
-  { file: "pre-sale-detailing.jpg", id: 3786092, size: CARD },
-  { file: "fleet-detailing.jpg", id: 12700835, size: CARD },
+  { file: "pre-sale-detailing.jpg", id: 16510645, size: CARD },
+  { file: "fleet-detailing.jpg", id: 33623769, size: CARD },
 
   // Page heroes
   { file: "services-hero.jpg", id: 14615262, size: WIDE },
-  { file: "packages-hero.jpg", id: 29018388, size: WIDE },
+  { file: "packages-hero.jpg", id: 6872572, size: WIDE },
   { file: "faq-hero.jpg", id: 14908957, size: WIDE },
   { file: "about-hero.jpg", id: 35149470, size: WIDE },
   { file: "about-side.jpg", id: 35149473, size: PORTRAIT },
-  { file: "contact-hero.jpg", id: 17081564, size: WIDE },
+  { file: "contact-hero.jpg", id: 32073602, size: WIDE, grade: { brightness: 0.9, a: 1.1, b: -8 } },
   { file: "gallery-hero.jpg", id: 6872162, size: WIDE },
 
   // Areas
@@ -57,16 +57,16 @@ const manifest = [
   // Correction comparison. The "after" is the source frame; the "before" is
   // the SAME frame with simulated clear-coat marring composited over it, so
   // the slider compares like with like and claims nothing about a real job.
-  { file: "correction-after.jpg", id: 29755711, size: WIDE, grade: { brightness: 1.15, a: 1.12, b: 0 } },
+  { file: "correction-after.jpg", id: 29755711, size: WIDE, grade: { brightness: 1.45, a: 1.18, b: 6 } },
 
   // Gallery
-  { file: "gallery-1.jpg", id: 20131971, size: WIDE },
+  { file: "gallery-1.jpg", id: 6873185, size: SQUARE },
   { file: "gallery-2.jpg", id: 5233264, size: SQUARE, grade: { saturation: 0.5, cool: true } },
   { file: "gallery-3.jpg", id: 4870705, size: SQUARE },
   { file: "gallery-4.jpg", id: 6873015, size: SQUARE },
   { file: "gallery-5.jpg", id: 248395, size: SQUARE, grade: { saturation: 0.3, cool: true } },
-  { file: "gallery-6.jpg", id: 18517124, size: SQUARE },
-  { file: "gallery-7.jpg", id: 29922284, size: SQUARE },
+  { file: "gallery-6.jpg", id: 12190248, size: SQUARE },
+  { file: "gallery-7.jpg", id: 28571826, size: SQUARE },
   { file: "gallery-8.jpg", id: 8237050, size: WIDE },
 ];
 
@@ -155,7 +155,7 @@ for (const item of manifest) {
   const arcs = [];
   const cx = w * 0.46;
   const cy = h * 0.42;
-  for (let i = 0; i < 900; i++) {
+  for (let i = 0; i < 1300; i++) {
     const r = 40 + Math.random() * (w * 0.55);
     const a0 = Math.random() * Math.PI * 2;
     const a1 = a0 + 0.25 + Math.random() * 0.9;
@@ -163,7 +163,7 @@ for (const item of manifest) {
     const y0 = cy + r * Math.sin(a0) * 0.62;
     const x1 = cx + r * Math.cos(a1);
     const y1 = cy + r * Math.sin(a1) * 0.62;
-    const op = (0.22 + Math.random() * 0.5).toFixed(3);
+    const op = (0.3 + Math.random() * 0.55).toFixed(3);
     arcs.push(
       `<path d="M${x0.toFixed(1)} ${y0.toFixed(1)} A${r.toFixed(1)} ${(r * 0.62).toFixed(1)} 0 0 1 ${x1.toFixed(1)} ${y1.toFixed(1)}" stroke="#ffffff" stroke-opacity="${op}" stroke-width="${(0.7 + Math.random()).toFixed(2)}" fill="none"/>`,
     );
@@ -183,9 +183,9 @@ for (const item of manifest) {
   );
 
   const base = grade(sharp(download(29755711)), WIDE, {
-    brightness: 1.15,
-    a: 1.12,
-    b: 0,
+    brightness: 1.45,
+    a: 1.18,
+    b: 6,
   })
     // Marring scatters the reflection: a little less contrast and a thin
     // grey veil. Kept subtle on purpose — the scratches do the work, and an

@@ -150,7 +150,7 @@ export default async function ServicePage({ params }: Props) {
       {(service.slug === "paint-correction" ||
         service.slug === "ceramic-coating") && <JobAnatomy />}
 
-      {/* Local reach — every service page carries the geography */}
+      {/* Local reach: every service page carries the geography */}
       <section className="border-t border-line py-16 md:py-20">
         <div className="wrap">
           <p className="mark">Where we do this</p>
@@ -184,7 +184,7 @@ export default async function ServicePage({ params }: Props) {
             </h2>
             <p className="prose-body mt-6">
               Send the vehicle, the city and where it will be parked. We come
-              back with a scope, a price and a window — usually the same
+              back with a scope, a price and a window, usually the same
               working day.
             </p>
             <a

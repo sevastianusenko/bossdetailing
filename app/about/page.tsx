@@ -9,7 +9,7 @@ import { Arrow } from "@/components/Arrow";
 import { JsonLd, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "About Boss Auto Detailing — Vancouver, WA",
+  title: "About Boss Auto Detailing in Vancouver, WA",
   description:
     "How a self-contained mobile detailing operation actually works, what we refuse to do, and why the process runs in the order it does. Based in Vancouver, WA.",
   alternates: { canonical: "/about" },
@@ -30,7 +30,7 @@ const refusals = [
   },
   {
     t: "We do not mask an odor we have not found",
-    d: "Fragrance buys a week. We look for the source — a spill under a seat, a wet cabin filter, moisture in the underlay — extract it, and tell you plainly when something is beyond what detailing can fix.",
+    d: "Fragrance buys you about a week. We look for the source, whether that is a spill under a seat, a wet cabin filter or moisture in the underlay, extract it, and tell you plainly when something is beyond what detailing can fix.",
   },
 ];
 
@@ -184,9 +184,9 @@ export default function AboutPage() {
           <div className="flex flex-col justify-end">
             <p className="prose-body">
               If you want to know whether a specific job is workable at your
-              address — a tight condo garage, a steep West Linn driveway, an
-              office lot with a supervisor to clear — the fastest answer is a
-              phone call.
+              address, whether that is a tight condo garage, a steep West Linn
+              driveway or an office lot with a supervisor to clear, the fastest
+              answer is a phone call.
             </p>
             <Link href="/contact" className="btn mt-7 self-start">
               Get in touch

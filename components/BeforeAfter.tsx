@@ -89,7 +89,7 @@ export function BeforeAfter({
         </span>
 
         <label htmlFor={id} className="sr-only">
-          Reveal the corrected paint — drag or use the arrow keys
+          Reveal the corrected paint. Drag it, or use the arrow keys
         </label>
         <input
           id={id}

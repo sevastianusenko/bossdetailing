@@ -26,7 +26,7 @@ const publicSans = Public_Sans({
  * render. See PRODUCT.md for the product record it serves.
  */
 const DIRECTION_CONTRACT = `<!--
-  THESIS: This site sells a shop, not a car wash — the offer is that a
+  THESIS: This site sells a shop, not a car wash. The offer is that a
   controlled, measurable process arrives at your address. It refuses the
   local-contractor template of stacked icon cards and badge rows.
   OWN-WORLD: Near-black graphite ground, bone and cool-silver type, one
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
     default:
-      "Boss Auto Detailing — Mobile Detailing in Vancouver, WA & Portland, OR",
+      "Boss Auto Detailing | Mobile Detailing in Vancouver, WA & Portland, OR",
     template: "%s | Boss Auto Detailing",
   },
   description:
@@ -58,14 +58,14 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: site.url,
     siteName: site.name,
-    title: "Boss Auto Detailing — Mobile Detailing, Vancouver WA & Portland OR",
+    title: "Boss Auto Detailing | Mobile Detailing, Vancouver WA & Portland OR",
     description:
       "We bring the shop to your driveway. Interior extraction, decontamination, paint correction and ceramic coating across both sides of the Columbia.",
     images: [{ url: "/images/hero.jpg", width: 1600, height: 900, alt: site.name }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Boss Auto Detailing — Vancouver WA & Portland OR",
+    title: "Boss Auto Detailing | Vancouver WA & Portland OR",
     description:
       "Self-contained mobile detailing. Paint correction and ceramic coating at your address.",
     images: ["/images/hero.jpg"],

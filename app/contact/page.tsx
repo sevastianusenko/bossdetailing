@@ -7,7 +7,7 @@ import { PhoneGlyph } from "@/components/Arrow";
 import { JsonLd, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Contact — Book Mobile Detailing in Vancouver WA & Portland OR",
+  title: "Contact Us to Book Mobile Detailing in Vancouver WA & Portland OR",
   description:
     "Call (509) 224-8299 or send a request. Tell us the vehicle, the city and where it will be parked, and we come back with a scope, a price and a window.",
   alternates: { canonical: "/contact" },
@@ -28,7 +28,7 @@ export default function ContactPage() {
         title="Tell us the car and where it sleeps."
         lede="The two things that decide a quote are the vehicle and the space it will be parked in. Give us both and the number we come back with will be the number you pay."
         image="/images/contact-hero.jpg"
-        imageAlt="Rain beading on a dark car parked at the kerb"
+        imageAlt="Full-size SUV parked in front of a home garage"
         crumbs={[{ label: "Home", href: "/" }]}
       />
 
@@ -68,13 +68,13 @@ export default function ContactPage() {
                     site.hours.map((h) => (
                       <span key={h.days} className="block">
                         {h.days}:{" "}
-                        {h.open ? `${h.open} – ${h.close}` : "By appointment"}
+                        {h.open ? `${h.open} to ${h.close}` : "By appointment"}
                       </span>
                     ))
                   ) : (
                     <>
                       By appointment, seven days a week. Early mornings,
-                      evenings and weekends are all workable — call and ask.
+                      evenings and weekends are all workable. Call and ask.
                     </>
                   )}
                 </dd>
@@ -90,9 +90,9 @@ export default function ContactPage() {
             </dl>
 
             <p className="mt-8 text-sm text-muted">
-              We are a mobile service — the address above is our base, not a
-              shop you can drop a vehicle at. All work happens at your
-              location.
+              We are a mobile service. The address above is our base rather
+              than a shop you can drop a vehicle at, so all work happens at
+              your location.
             </p>
           </div>
 

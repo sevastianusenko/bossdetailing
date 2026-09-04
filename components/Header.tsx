@@ -48,7 +48,10 @@ export function Header() {
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${
         lifted || open
           ? "border-b border-line bg-ink/92 backdrop-blur-md"
-          : "border-b border-transparent"
+          : // Unscrolled, the bar sits directly on the hero photograph, which
+            // can be light anywhere. A scrim keeps the nav legible without
+            // committing to a solid bar.
+            "border-b border-transparent bg-gradient-to-b from-ink/90 via-ink/45 to-transparent"
       }`}
       style={{ height: "var(--header-h)" }}
     >

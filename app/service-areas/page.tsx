@@ -8,7 +8,7 @@ import { Arrow } from "@/components/Arrow";
 import { JsonLd, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Service Area — Mobile Detailing Across WA & OR",
+  title: "Mobile Detailing Service Area Across WA & OR",
   description:
     "Boss Auto Detailing covers Vancouver, Camas and Ridgefield in Washington, and Portland, Lake Oswego, West Linn and Happy Valley in Oregon. We come to you.",
   alternates: { canonical: "/service-areas" },
@@ -27,7 +27,7 @@ export default function ServiceAreasPage() {
       <PageHero
         mark="Service area"
         title="We cross the bridge most days."
-        lede="Clark County is home. Multnomah, Washington and Clackamas are the rest of the week. Every city below gets the same fully self-contained setup — nothing plugs into your house."
+        lede="Clark County is home. Multnomah, Washington and Clackamas are the rest of the week. Every city below gets the same fully self-contained setup, and nothing plugs into your house."
         image="/images/area.jpg"
         imageAlt="A steel bridge spanning the river between the two cities we work in"
         crumbs={[{ label: "Home", href: "/" }]}

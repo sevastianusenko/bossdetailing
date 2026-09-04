@@ -82,7 +82,7 @@ export async function POST(request: Request) {
   if (!apiKey || !to) {
     // Not configured yet. Say so honestly rather than pretending it sent.
     console.warn(
-      "[request] RESEND_API_KEY or REQUEST_INBOX is not set — request was not delivered.",
+      "[request] RESEND_API_KEY or REQUEST_INBOX is not set. Request was not delivered.",
       values,
     );
     return NextResponse.json(
@@ -100,7 +100,7 @@ export async function POST(request: Request) {
     )
     .join("");
 
-  const html = `<div style="max-width:560px"><h2 style="font:600 18px/1.3 -apple-system,sans-serif;margin:0 0 16px">New detailing request — ${escapeHtml(values.city)}</h2><table cellpadding="0" cellspacing="0">${rows}</table></div>`;
+  const html = `<div style="max-width:560px"><h2 style="font:600 18px/1.3 -apple-system,sans-serif;margin:0 0 16px">New detailing request from ${escapeHtml(values.city)}</h2><table cellpadding="0" cellspacing="0">${rows}</table></div>`;
 
   const text = FIELDS.filter((f) => values[f])
     .map((f) => `${LABELS[f]}: ${values[f]}`)
@@ -119,7 +119,7 @@ export async function POST(request: Request) {
           `Boss Auto Detailing <requests@${site.domain}>`,
         to: [to],
         reply_to: values.email || undefined,
-        subject: `Detailing request — ${values.name}, ${values.city} (${values.service})`,
+        subject: `Detailing request from ${values.name}, ${values.city} (${values.service})`,
         html,
         text,
       }),

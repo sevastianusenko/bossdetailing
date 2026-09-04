@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 /**
- * Shared interior-page opening. Same grammar as the home hero — full-bleed
- * photograph, mark, hero-rank headline — at a shorter height, so a visitor
+ * Shared interior-page opening. Same grammar as the home hero (full-bleed
+ * photograph, mark, hero-rank headline) at a shorter height, so a visitor
  * arriving from search lands somewhere recognisably the same site.
  */
 export function PageHero({

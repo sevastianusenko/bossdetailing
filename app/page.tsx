@@ -24,12 +24,12 @@ const heroFacts = [
 ];
 
 const galleryShots = [
-  { src: "/images/gallery-1.jpg", alt: "Dark paint holding a clean, undistorted reflection" },
+  { src: "/images/gallery-1.jpg", alt: "Detailer reaching into a cabin to wipe down the interior" },
   { src: "/images/gallery-2.jpg", alt: "Vacuum nozzle drawing soil out of a car carpet" },
   { src: "/images/gallery-3.jpg", alt: "Wheel and tire being scrubbed by hand with suds" },
   { src: "/images/gallery-4.jpg", alt: "Steering wheel and switch gear being wiped down by hand" },
   { src: "/images/gallery-5.jpg", alt: "Water standing in tight beads on a glossy panel" },
-  { src: "/images/gallery-6.jpg", alt: "Black leather seating cleaned to a matte finish" },
+  { src: "/images/gallery-6.jpg", alt: "Light leather seat and console cleaned to a matte finish" },
 ];
 
 export default function HomePage() {
@@ -42,7 +42,7 @@ export default function HomePage() {
         <div className="sweep grain absolute inset-0 -z-10">
           <Image
             src="/images/hero.jpg"
-            alt="A black car under snow foam being washed by hand"
+            alt="Detailer pressure-washing an SUV on a residential driveway"
             fill
             priority
             sizes="100vw"
@@ -62,8 +62,8 @@ export default function HomePage() {
           </h1>
 
           <p className="lede mt-6">
-            Boss Auto Detailing arrives fully self-contained — water, power,
-            extraction and polishing — and does shop-grade work at your home,
+            We arrive fully self-contained, carrying our own water, power,
+            extraction and polishing gear, and do shop-grade work at your home,
             your office lot or your yard. Both sides of the Columbia.
           </p>
 
@@ -112,10 +112,9 @@ export default function HomePage() {
               lighting and a full polishing setup.
             </p>
             <p className="prose-body mt-4">
-              We are the second one. That is why paint correction and ceramic
-              coating — work that normally means leaving your car at a shop for
-              three days — can happen in your own garage while you carry on
-              with your week.
+              We are the second one. Paint correction and ceramic coating
+              normally mean leaving your car at a shop for three days. Here it
+              happens in your own garage while you carry on with your week.
             </p>
             <Link href="/about" className="link-more mt-8 inline-flex">
               How we work
@@ -236,7 +235,7 @@ export default function HomePage() {
               afterAlt="The same frame with the marring removed, reflecting cleanly"
               beforeLabel="Marred"
               afterLabel="Corrected"
-              note="Illustration — one photograph, shown with and without simulated clear-coat marring."
+              note="Illustration. One photograph, shown with and without simulated clear-coat marring."
             />
           </div>
 
@@ -247,9 +246,9 @@ export default function HomePage() {
             </h2>
             <p className="prose-body mt-6">
               The reason a black car rarely looks black is a web of fine
-              circular scratches in the clear coat — put there by washing, not
-              by the road. Under a single light source they scatter the
-              reflection and turn depth into grey.
+              circular scratches in the clear coat, put there by washing rather
+              than by the road. Under a single light source they scatter the
+              reflection and turn depth into gray.
             </p>
             <p className="prose-body mt-4">
               Correction removes them from the clear coat rather than filling
@@ -288,7 +287,7 @@ export default function HomePage() {
             <p className="prose-body mt-6">
               Starting prices are for a coupe or sedan in reasonable condition.
               Size and condition move the number, so every job gets a real
-              quote before we start — never a surprise at handover.
+              quote before we start. No surprises at handover.
             </p>
           </div>
 
@@ -458,7 +457,7 @@ export default function HomePage() {
             <p className="prose-body mt-6">
               We cross the bridge most days. Clark County is home; Multnomah,
               Washington and Clackamas are the rest of the week. If you are
-              just outside the ring, call and ask — it is often still workable,
+              just outside the ring, call and ask. It is often still workable,
               particularly for the bigger jobs.
             </p>
           </div>
@@ -595,7 +594,7 @@ export default function HomePage() {
                   {site.hoursConfirmed
                     ? site.hours
                         .filter((h) => h.open)
-                        .map((h) => `${h.days} ${h.open}–${h.close}`)
+                        .map((h) => `${h.days} ${h.open}-${h.close}`)
                         .join(" · ")
                     : "By appointment, seven days a week"}
                 </dd>

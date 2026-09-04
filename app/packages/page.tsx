@@ -8,7 +8,7 @@ import { Arrow } from "@/components/Arrow";
 import { JsonLd, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Packages & Pricing — Mobile Detailing, Vancouver WA & Portland OR",
+  title: "Packages & Pricing for Mobile Detailing in Vancouver WA & Portland OR",
   description:
     "Three levels of mobile detailing: Maintenance, Signature Detail, and Correction & Coating. Starting prices, what is included, and what moves the number.",
   alternates: { canonical: "/packages" },
@@ -27,9 +27,9 @@ export default function PackagesPage() {
       <PageHero
         mark="Packages"
         title="What it costs, and what moves the number."
-        lede="Three levels, each a superset of the one before it. Starting prices are for a coupe or sedan in reasonable condition — size and condition are the two things that change them."
+        lede="Three levels, each a superset of the one before it. Starting prices are for a coupe or sedan in reasonable condition. Size and condition are the two things that change them."
         image="/images/packages-hero.jpg"
-        imageAlt="A dark sedan photographed outdoors, its panels holding a clean reflection"
+        imageAlt="Microfiber towel drawn across a dark, polished panel"
         crumbs={[{ label: "Home", href: "/" }]}
       />
 
@@ -208,14 +208,14 @@ export default function PackagesPage() {
               </h3>
               <p className="prose-body mt-4">
                 Heavy pet hair, a spill that has soaked into the underlay,
-                years of unprotected paint in a shaded street — these add
-                labour, and we would rather tell you before we start than
+                years of unprotected paint in a shaded street. All of it adds
+                labor, and we would rather tell you before we start than
                 explain it afterwards. Send photos with your request if you are
-                unsure; it makes the quote far more accurate.
+                unsure. It makes the quote far more accurate.
               </p>
               <p className="mt-5 text-sm text-muted">
                 Every price on this page is a starting point, not a final
-                quote. You get the real number before any work begins — call{" "}
+                quote. You get the real number before any work begins. Call{" "}
                 <a href={site.phone.href} className="link-inline">
                   {site.phone.display}
                 </a>

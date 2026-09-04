@@ -10,7 +10,7 @@ export function Wordmark({ className = "" }: { className?: string }) {
     <Link
       href="/"
       className={`group inline-flex items-center gap-3 ${className}`}
-      aria-label="Boss Auto Detailing — home"
+      aria-label="Boss Auto Detailing, home"
     >
       <span
         aria-hidden="true"

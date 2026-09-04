@@ -1,5 +1,5 @@
 /**
- * The stage-by-stage job record — the device the top detailing studios build
+ * The stage-by-stage job record, the device the top detailing studios build
  * their sites around. It describes the schedule of the work, not a specific
  * customer's vehicle, so nothing here is a claim about a job we performed.
  */
@@ -40,7 +40,7 @@ const days: {
       },
       {
         at: "13:00",
-        title: "Test spot — your approval",
+        title: "Test spot, and your approval",
         body: "One section corrected and shown to you on your own paint, under the same light. The rest of the car is not touched until you have seen it.",
       },
       {
@@ -80,7 +80,7 @@ const days: {
         body: "The vehicle stays in your covered space, dry and untouched, for the stated cure window. No rain contact, no washing.",
       },
       {
-        at: "—",
+        at: "End",
         title: "Walkaround and handover",
         body: "We go over the car with you in good light: what came out, what did not, and why. Written aftercare, and the date worth booking the inspection.",
       },
@@ -99,7 +99,7 @@ export function JobAnatomy() {
           </h2>
           <p className="prose-body mt-6">
             &ldquo;Multi-stage correction&rdquo; is a phrase. This is the
-            schedule behind it — where the hours go, and the two points where
+            schedule behind it: where the hours go, and the two points where
             the work stops and waits for you.
           </p>
         </div>
@@ -137,8 +137,8 @@ export function JobAnatomy() {
         </div>
 
         <p className="mt-10 max-w-[70ch] text-sm text-muted">
-          A typical schedule for a mid-size vehicle in fair condition — not a
-          promise for yours. Condition moves every number on this page, which
+          A typical schedule for a mid-size vehicle in fair condition, and not
+          a promise for yours. Condition moves every number on this page, which
           is why we look at the car before we quote it.
         </p>
       </div>

@@ -8,9 +8,9 @@ import { Arrow } from "@/components/Arrow";
 import { JsonLd, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Mobile Detailing Services — Vancouver WA & Portland OR",
+  title: "Mobile Detailing Services in Vancouver WA & Portland OR",
   description:
-    "Interior extraction, hand wash and decontamination, paint correction, ceramic coating, headlight restoration, pre-sale prep and fleet service — all performed at your address.",
+    "Interior extraction, hand wash and decontamination, paint correction, ceramic coating, headlight restoration, pre-sale prep and fleet service, all performed at your address.",
   alternates: { canonical: "/services" },
 };
 

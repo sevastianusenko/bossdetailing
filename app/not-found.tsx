@@ -13,7 +13,7 @@ export default function NotFound() {
         </h1>
         <p className="lede mt-6">
           The link is broken or the page has moved. Everything we do is one of
-          the services below — or just call and tell us what you need.
+          the services below. Or just call and tell us what you need.
         </p>
 
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">

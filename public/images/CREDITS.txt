@@ -1,33 +1,33 @@
 Reference photography — Pexels (free to use, attribution not required).
 REPLACE ALL OF THESE with Boss Auto Detailing's own job photography.
 
-hero.jpg  https://www.pexels.com/photo/9966016/
+hero.jpg  https://www.pexels.com/photo/4876639/
 rig.jpg  https://www.pexels.com/photo/20042048/
 area.jpg  https://www.pexels.com/photo/32403749/
 interior-detailing.jpg  https://www.pexels.com/photo/5233285/
-exterior-detailing.jpg  https://www.pexels.com/photo/6873174/
+exterior-detailing.jpg  https://www.pexels.com/photo/7154632/
 paint-correction.jpg  https://www.pexels.com/photo/5233258/
 ceramic-coating.jpg  https://www.pexels.com/photo/17216298/
 headlight-restoration.jpg  https://www.pexels.com/photo/4870702/
-pre-sale-detailing.jpg  https://www.pexels.com/photo/3786092/
-fleet-detailing.jpg  https://www.pexels.com/photo/12700835/
+pre-sale-detailing.jpg  https://www.pexels.com/photo/16510645/
+fleet-detailing.jpg  https://www.pexels.com/photo/33623769/
 services-hero.jpg  https://www.pexels.com/photo/14615262/
-packages-hero.jpg  https://www.pexels.com/photo/29018388/
+packages-hero.jpg  https://www.pexels.com/photo/6872572/
 faq-hero.jpg  https://www.pexels.com/photo/14908957/
 about-hero.jpg  https://www.pexels.com/photo/35149470/
 about-side.jpg  https://www.pexels.com/photo/35149473/
-contact-hero.jpg  https://www.pexels.com/photo/17081564/
+contact-hero.jpg  https://www.pexels.com/photo/32073602/
 gallery-hero.jpg  https://www.pexels.com/photo/6872162/
 area-vancouver.jpg  https://www.pexels.com/photo/186077/
 area-portland.jpg  https://www.pexels.com/photo/19665312/
 area-suburb.jpg  https://www.pexels.com/photo/5353883/
 correction-after.jpg  https://www.pexels.com/photo/29755711/
-gallery-1.jpg  https://www.pexels.com/photo/20131971/
+gallery-1.jpg  https://www.pexels.com/photo/6873185/
 gallery-2.jpg  https://www.pexels.com/photo/5233264/
 gallery-3.jpg  https://www.pexels.com/photo/4870705/
 gallery-4.jpg  https://www.pexels.com/photo/6873015/
 gallery-5.jpg  https://www.pexels.com/photo/248395/
-gallery-6.jpg  https://www.pexels.com/photo/18517124/
-gallery-7.jpg  https://www.pexels.com/photo/29922284/
+gallery-6.jpg  https://www.pexels.com/photo/12190248/
+gallery-7.jpg  https://www.pexels.com/photo/28571826/
 gallery-8.jpg  https://www.pexels.com/photo/8237050/
 correction-before.jpg  simulated clear-coat marring over correction-after.jpg

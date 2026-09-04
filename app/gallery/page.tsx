@@ -6,14 +6,14 @@ import { CtaBand } from "@/components/CtaBand";
 import { JsonLd, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "The Work — Mobile Detailing Gallery",
+  title: "The Work: Mobile Detailing Gallery",
   description:
-    "Interior extraction, decontamination, machine correction and ceramic coating — what each stage actually changes, close enough to see.",
+    "Interior extraction, decontamination, machine correction and ceramic coating. What each stage actually changes, close enough to see.",
   alternates: { canonical: "/gallery" },
 };
 
 /*
-  REPLACE BEFORE LAUNCH — these are licensed reference photographs, not
+  REPLACE BEFORE LAUNCH. These are licensed reference photographs, not
   Boss Auto Detailing's own jobs. The page says so in plain sight below the
   grid. Swap the files in /public/images for the client's own work and
   delete the disclosure line. See HANDOFF.md.
@@ -21,13 +21,13 @@ export const metadata: Metadata = {
 const shots = [
   {
     src: "/images/gallery-1.jpg",
-    alt: "Dark paint holding a clean, undistorted reflection under ambient light",
-    caption: "Gloss deep enough to read the light source in",
+    alt: "Detailer reaching into a cabin to wipe down the interior",
+    caption: "Cabin work, done by hand and by the inch",
   },
   {
     src: "/images/gallery-2.jpg",
     alt: "Vacuum nozzle drawing soil out of a car carpet",
-    caption: "Into the carpet, not across the top of it",
+    caption: "Extraction pulls the soil out of the fiber",
   },
   {
     src: "/images/gallery-3.jpg",
@@ -46,8 +46,8 @@ const shots = [
   },
   {
     src: "/images/gallery-6.jpg",
-    alt: "Leather seat cleaned and conditioned to a matte finish",
-    caption: "Leather conditioned to matte, not dressed to shine",
+    alt: "Light leather seat and console cleaned to a matte finish",
+    caption: "Leather cleaned and conditioned, left matte",
   },
 ];
 
@@ -55,13 +55,13 @@ const shots = [
 const closers = [
   {
     src: "/images/gallery-7.jpg",
-    alt: "An SUV under a full covering of snow foam before the contact wash",
-    caption: "Foam dwell, before anything touches the paint",
+    alt: "Machine polisher working along the edge of a painted panel",
+    caption: "Machine correction, panel by panel",
   },
   {
     src: "/images/gallery-8.jpg",
     alt: "Engine bay cleaned and conservatively dressed",
-    caption: "Engine bay — clean, not freshly blasted",
+    caption: "Engine bay cleaned and dressed conservatively",
   },
 ];
 
@@ -94,7 +94,7 @@ export default function GalleryPage() {
               afterAlt="The same frame with the marring removed, reflecting cleanly"
               beforeLabel="Marred"
               afterLabel="Corrected"
-              note="Illustration — one photograph, shown with and without simulated clear-coat marring."
+              note="Illustration. One photograph, shown with and without simulated clear-coat marring."
             />
           </div>
           <div className="lg:col-span-5">
@@ -107,7 +107,7 @@ export default function GalleryPage() {
               the mechanism rather than a lighting change: thousands of fine
               circular scratches scatter a single light source into a haze.
               Correction removes them by taking a few microns of clear coat
-              down to their depth — nothing is added, nothing is filled.
+              down to their depth. Nothing is added and nothing is filled.
             </p>
             <p className="mt-4 text-sm text-muted">
               An illustration, not a customer&rsquo;s car. Real before-and-after
@@ -161,7 +161,7 @@ export default function GalleryPage() {
 
           <p className="mt-6 max-w-[70ch] text-sm text-muted">
             Reference photography. Boss Auto Detailing&rsquo;s own job
-            documentation is being added as work is completed — ask on the
+            documentation is being added as work is completed. Ask on the
             phone if you want to see a specific service on a specific vehicle
             before booking.
           </p>
