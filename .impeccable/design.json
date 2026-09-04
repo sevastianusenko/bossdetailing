@@ -1,0 +1,470 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-03T23:17:21.710Z",
+  "title": "Design System: Boss Auto Detailing",
+  "extensions": {
+    "colorMeta": {
+      "carmine": {
+        "role": "primary",
+        "displayName": "Shop Carmine",
+        "canonical": "#a81e22",
+        "tonalRamp": [
+          "#2a0709",
+          "#4a0d10",
+          "#6b1418",
+          "#8c191d",
+          "#a81e22",
+          "#c4262c",
+          "#e97078",
+          "#f6c3c6"
+        ]
+      },
+      "carmine-hi": {
+        "role": "primary",
+        "displayName": "Carmine Hot",
+        "canonical": "#c4262c",
+        "tonalRamp": [
+          "#310a0b",
+          "#561113",
+          "#79181b",
+          "#9d1f23",
+          "#c4262c",
+          "#d8474d",
+          "#e97078",
+          "#f7cdcf"
+        ]
+      },
+      "carmine-lt": {
+        "role": "primary",
+        "displayName": "Inspection Carmine",
+        "canonical": "#e97078",
+        "tonalRamp": [
+          "#3a1416",
+          "#5e2126",
+          "#822f35",
+          "#a63f46",
+          "#c65158",
+          "#e97078",
+          "#f3a1a6",
+          "#fbd6d8"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Bay Graphite",
+        "canonical": "#08090a",
+        "tonalRamp": [
+          "#08090a",
+          "#0e1113",
+          "#161b1e",
+          "#1e2427",
+          "#2f383d",
+          "#4c585f",
+          "#8a959b",
+          "#d5dade"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Band Graphite",
+        "canonical": "#0e1113",
+        "tonalRamp": [
+          "#08090a",
+          "#0e1113",
+          "#161b1e",
+          "#1e2427",
+          "#2f383d",
+          "#4c585f",
+          "#8a959b",
+          "#d5dade"
+        ]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Hover Graphite",
+        "canonical": "#161b1e",
+        "tonalRamp": [
+          "#08090a",
+          "#0e1113",
+          "#161b1e",
+          "#1e2427",
+          "#2f383d",
+          "#4c585f",
+          "#8a959b",
+          "#d5dade"
+        ]
+      },
+      "ink-4": {
+        "role": "neutral",
+        "displayName": "Inert Graphite",
+        "canonical": "#1e2427",
+        "tonalRamp": [
+          "#08090a",
+          "#0e1113",
+          "#161b1e",
+          "#1e2427",
+          "#2f383d",
+          "#4c585f",
+          "#8a959b",
+          "#d5dade"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Structural Hairline",
+        "canonical": "#262c30",
+        "tonalRamp": [
+          "#0d1012",
+          "#151a1c",
+          "#1d2225",
+          "#262c30",
+          "#3b444a",
+          "#5c686f",
+          "#94a0a7",
+          "#dbe1e4"
+        ]
+      },
+      "line-soft": {
+        "role": "neutral",
+        "displayName": "Quiet Hairline",
+        "canonical": "#1a1f22",
+        "tonalRamp": [
+          "#0d1012",
+          "#151a1c",
+          "#1a1f22",
+          "#262c30",
+          "#3b444a",
+          "#5c686f",
+          "#94a0a7",
+          "#dbe1e4"
+        ]
+      },
+      "bone": {
+        "role": "neutral",
+        "displayName": "Bone",
+        "canonical": "#f3f2ee",
+        "tonalRamp": [
+          "#232320",
+          "#3b3b37",
+          "#54544f",
+          "#6f6f69",
+          "#8d8d86",
+          "#adaca6",
+          "#d2d1cc",
+          "#f3f2ee"
+        ]
+      },
+      "silver": {
+        "role": "neutral",
+        "displayName": "Cool Silver",
+        "canonical": "#aab1b7",
+        "tonalRamp": [
+          "#1c2023",
+          "#2f3538",
+          "#43494e",
+          "#5a6167",
+          "#737b81",
+          "#8e969c",
+          "#aab1b7",
+          "#dfe3e6"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Label Grey",
+        "canonical": "#838b92",
+        "tonalRamp": [
+          "#181c1f",
+          "#2a2f33",
+          "#3d4348",
+          "#52585e",
+          "#686f75",
+          "#838b92",
+          "#a9b0b5",
+          "#dde0e3"
+        ]
+      },
+      "chalk": {
+        "role": "neutral",
+        "displayName": "Chalk Inversion",
+        "canonical": "#edece7",
+        "tonalRamp": [
+          "#232320",
+          "#393937",
+          "#51514d",
+          "#6b6b66",
+          "#898984",
+          "#a9a9a3",
+          "#cdccc7",
+          "#edece7"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Hero Rank",
+        "purpose": "The single H1 per page, bottom-left over a full-bleed photograph. Archivo compressed to wdth 92, capped at 17-19ch."
+      },
+      "headline": {
+        "displayName": "Section Rank",
+        "purpose": "Every section H2 and the request form's success state. Archivo at wdth 94."
+      },
+      "title": {
+        "displayName": "Sub Rank",
+        "purpose": "Process-step titles, feature terms, FAQ questions. Archivo at wdth 96."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running prose in silver at 70ch; strong lifts to bone."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "The paragraph directly under a hero or section headline, silver, capped at 48ch."
+      },
+      "label": {
+        "displayName": "Spec Label",
+        "purpose": "Spec keys, field labels, fact-strip keys, tier metadata. Uppercase display face; the section mark runs one step wider at 0.2em."
+      },
+      "listHeading": {
+        "role": "List heading",
+        "class": ".rank-list",
+        "fontFamily": "Archivo",
+        "fontWeight": 700,
+        "fontStretch": "94%",
+        "fontSize": "clamp(1.6rem, 3vw, 2.5rem)",
+        "lineHeight": 1.05,
+        "letterSpacing": "-0.03em",
+        "usedFor": "The headline inside a repeating row: service pillars, city links, job-timeline day heads."
+      },
+      "wordmark": {
+        "role": "Wordmark",
+        "fontFamily": "Archivo",
+        "fontWeight": 800,
+        "fontStretch": "88%",
+        "fontSize": "1.4rem",
+        "letterSpacing": "-0.035em",
+        "offRamp": true,
+        "note": "Deliberately off the type ramp. The logotype holds one size at every placement; its discipline line sits at the Micro label step."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The system's only easing curve, for state, chrome and entrance alike."
+      },
+      {
+        "name": "state",
+        "value": "200-250ms",
+        "purpose": "Button, link, border and colour state changes."
+      },
+      {
+        "name": "chrome",
+        "value": "300-500ms",
+        "purpose": "Header colour lift, mobile menu bars, sticky call bar translation."
+      },
+      {
+        "name": "sweep",
+        "value": "8s cubic-bezier(0.16, 1, 0.3, 1) infinite",
+        "purpose": "Clear-coat specular band across a primary photograph; the site's one authored motion moment."
+      },
+      {
+        "name": "rule-drift",
+        "value": "12s linear infinite",
+        "purpose": "Carmine-light centre drifting along the footer hairline."
+      },
+      {
+        "name": "rise",
+        "value": "0.9s, animation-timeline: view(), range entry 0% cover 24%",
+        "purpose": "Scroll entrance for list rows; gated behind @supports and prefers-reduced-motion so content is never hidden by default."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ],
+    "imageGrade": {
+      "purpose": "One grade for all site photography so twenty sources read as one shop. Applied in scripts/build-images.mjs.",
+      "value": "modulate({ saturation: 0.76 }) -> linear(1.08, -6) -> gamma(1.03), cover-cropped on attention, mozjpeg q80 progressive"
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The call or quote action. Carmine ground, compressed uppercase display label, hard corners.",
+      "html": "<button class=\"ds-btn\"><svg class=\"ds-btn-glyph\" width=\"15\" height=\"15\" viewBox=\"0 0 16 16\" fill=\"none\" aria-hidden=\"true\"><path d=\"M5.2 1.6 6.6 4.5 5.1 6a9.4 9.4 0 0 0 4.9 4.9l1.5-1.5 2.9 1.4v2.4c0 .6-.5 1.1-1.1 1.1A12.7 12.7 0 0 1 .7 1.7C.7 1.1 1.2.6 1.8.6h2.4l1 1Z\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linejoin=\"round\"/></svg>(509) 224-8299</button>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; min-height: 3.25rem; padding-inline: 1.6rem; background: #a81e22; color: #f3f2ee; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 0.84rem; letter-spacing: 0.11em; text-transform: uppercase; border: 1px solid transparent; border-radius: 0; cursor: pointer; transition: background-color 0.25s cubic-bezier(0.16,1,0.3,1), transform 0.25s cubic-bezier(0.16,1,0.3,1); } .ds-btn:hover { background: #c4262c; } .ds-btn:active { transform: translateY(1px); } .ds-btn:focus-visible { outline: 2px solid #e97078; outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Ghost Action",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "The second action of a pair. Transparent on a structural hairline; fills to the hover ink step.",
+      "html": "<button class=\"ds-btn-ghost\">Request a quote<svg width=\"18\" height=\"10\" viewBox=\"0 0 18 10\" fill=\"none\" aria-hidden=\"true\"><path d=\"M0 5h16M12 1l4 4-4 4\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"square\"/></svg></button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; min-height: 3.25rem; padding-inline: 1.6rem; background: transparent; color: #f3f2ee; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 0.84rem; letter-spacing: 0.11em; text-transform: uppercase; border: 1px solid #262c30; border-radius: 0; cursor: pointer; transition: background-color 0.25s cubic-bezier(0.16,1,0.3,1), border-color 0.25s cubic-bezier(0.16,1,0.3,1); } .ds-btn-ghost:hover { background: #161b1e; border-color: #838b92; } .ds-btn-ghost:focus-visible { outline: 2px solid #e97078; outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input-control",
+      "description": "Request-form control: uppercase display label over a square ink-2 field with a hairline border.",
+      "html": "<label class=\"ds-field\"><span>Phone *</span><input class=\"ds-control\" type=\"tel\" placeholder=\"(360) 555-0142\"></label>",
+      "css": ".ds-field { display: block; } .ds-field > span { display: block; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #838b92; margin-bottom: 0.5rem; } .ds-control { width: 100%; min-height: 3.25rem; padding: 0.75rem 1rem; background: #0e1113; border: 1px solid #262c30; border-radius: 0; color: #f3f2ee; font-family: 'Public Sans', system-ui, Arial, sans-serif; transition: border-color 0.2s cubic-bezier(0.16,1,0.3,1), background-color 0.2s cubic-bezier(0.16,1,0.3,1); } .ds-control::placeholder { color: #838b92; } .ds-control:hover { border-color: #1e2427; } .ds-control:focus { outline: none; border-color: #e97078; background: #161b1e; }"
+    },
+    {
+      "name": "Primary Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Desktop header navigation: compressed uppercase display, silver at rest, bone when current.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main\"><a href=\"#\" class=\"ds-nav-link ds-nav-link--current\" aria-current=\"page\">Services</a><a href=\"#\" class=\"ds-nav-link\">Packages</a><a href=\"#\" class=\"ds-nav-link\">Service area</a><a href=\"#\" class=\"ds-nav-link\">About</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 1.75rem; background: #08090a; padding: 1rem 1.25rem; } .ds-nav-link { font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: #aab1b7; text-decoration: none; transition: color 0.2s cubic-bezier(0.16,1,0.3,1); } .ds-nav-link:hover { color: #f3f2ee; } .ds-nav-link--current { color: #f3f2ee; } .ds-nav-link:focus-visible { outline: 2px solid #e97078; outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Section Mark",
+      "kind": "chip",
+      "refersTo": "section-mark",
+      "description": "The system's only kicker: uppercase muted label preceded by a carmine slash, placed directly above a section headline.",
+      "html": "<p class=\"ds-mark\">Paint correction</p>",
+      "css": ".ds-mark { display: inline-flex; align-items: baseline; gap: 0.55ch; margin: 0; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: #838b92; } .ds-mark::before { content: '/'; color: #e97078; font-weight: 700; }"
+    },
+    {
+      "name": "Spec Row",
+      "kind": "custom",
+      "refersTo": "spec-row",
+      "description": "The replacement for the icon card. Uppercase muted key against a bone value on a structural hairline.",
+      "html": "<dl class=\"ds-spec-list\"><div class=\"ds-spec\"><dt>Base</dt><dd>2909 NE 57th Ave, Vancouver, WA 98661</dd></div><div class=\"ds-spec\"><dt>Coverage</dt><dd>Clark · Multnomah · Washington · Clackamas</dd></div></dl>",
+      "css": ".ds-spec-list { margin: 0; background: #08090a; } .ds-spec { display: grid; grid-template-columns: minmax(6.5rem, 11ch) 1fr; gap: 0.6rem 1.5rem; border-top: 1px solid #262c30; padding-block: 0.85rem; align-items: start; } .ds-spec dt { font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #838b92; padding-top: 0.3rem; margin: 0; } .ds-spec dd { margin: 0; color: #f3f2ee; font-family: 'Public Sans', system-ui, Arial, sans-serif; font-size: 0.97rem; line-height: 1.5; }"
+    },
+    {
+      "name": "Job Timeline Row",
+      "kind": "custom",
+      "refersTo": "job-timeline-row",
+      "description": "The stage-by-stage job record. A fixed 3.5rem time gutter in tabular carmine holds every clock value on one left edge, with the stage title at Title rank and its body in silver on a structural hairline.",
+      "html": "<ol class=\"ds-timeline\"><li class=\"ds-timeline-row\"><span class=\"ds-timeline-at\">08:30</span><div><h4 class=\"ds-timeline-title\">Wheels, barrels, arches</h4><p class=\"ds-timeline-body\">First, while the paint is still cold and dry. Faces, barrels, lug seats and wheel wells by hand, with dedicated brushes.</p></div></li><li class=\"ds-timeline-row\"><span class=\"ds-timeline-at\">12:00</span><div><h4 class=\"ds-timeline-title\">Measure, then inspect</h4><p class=\"ds-timeline-body\">Paint thickness readings recorded panel by panel, then the defect map under raking light.</p></div></li></ol>",
+      "css": ".ds-timeline { list-style: none; margin: 0; padding: 0; background: #08090a; } .ds-timeline-row { display: grid; grid-template-columns: 3.5rem 1fr; column-gap: 1.25rem; border-top: 1px solid #262c30; padding: 1.25rem 0; } .ds-timeline-at { padding-top: 0.25rem; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; color: #e97078; font-variant-numeric: tabular-nums; } .ds-timeline-title { margin: 0; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 1.35rem; font-weight: 600; font-stretch: 96%; line-height: 1.16; letter-spacing: -0.02em; color: #f3f2ee; } .ds-timeline-body { margin: 0.5rem 0 0; font-family: 'Public Sans', system-ui, Arial, sans-serif; font-size: 0.875rem; line-height: 1.6; color: #aab1b7; }"
+    },
+    {
+      "name": "Featured Price Tier",
+      "kind": "card",
+      "refersTo": "price-tier-featured",
+      "description": "The one inverted panel in the system: chalk ground, ink type, carmine flag, carmine hairline dashes for inclusions.",
+      "html": "<div class=\"ds-tier\"><div class=\"ds-tier-head\"><h3>Restore</h3><span class=\"ds-tier-flag\">Most booked</span></div><p class=\"ds-tier-price\"><span class=\"ds-tier-from\">From</span><span class=\"ds-tier-amount\">$549</span></p><ul class=\"ds-tier-list\"><li><span aria-hidden=\"true\"></span>Single-stage machine correction</li><li><span aria-hidden=\"true\"></span>Full decontamination and clay</li></ul></div>",
+      "css": ".ds-tier { background: #edece7; color: #08090a; padding: 2.5rem; border-radius: 0; font-family: 'Public Sans', system-ui, Arial, sans-serif; } .ds-tier-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; } .ds-tier h3 { margin: 0; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 1.5rem; font-weight: 700; font-stretch: 94%; letter-spacing: -0.03em; color: #08090a; } .ds-tier-flag { background: #a81e22; color: #f3f2ee; padding: 0.25rem 0.5rem; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 0.58rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; } .ds-tier-price { display: flex; align-items: baseline; gap: 0.5rem; margin: 1.75rem 0 0; } .ds-tier-from { font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgb(8 9 10 / 0.55); } .ds-tier-amount { font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 3rem; font-weight: 700; font-stretch: 92%; letter-spacing: -0.04em; } .ds-tier-list { list-style: none; margin: 1.5rem 0 0; padding: 0; border-top: 1px solid rgb(8 9 10 / 0.15); padding-top: 1.5rem; } .ds-tier-list li { display: flex; gap: 0.75rem; font-size: 0.875rem; line-height: 1.6; color: rgb(8 9 10 / 0.8); margin-bottom: 0.625rem; } .ds-tier-list li span { display: block; flex: 0 0 auto; margin-top: 0.5rem; height: 1px; width: 0.75rem; background: #a81e22; }"
+    },
+    {
+      "name": "Clear-Coat Sweep Frame",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "The site's material signature: a specular band travelling across a photographic surface like an inspection lamp across a panel, with a fine overlay grain.",
+      "html": "<div class=\"ds-sweep ds-grain\"><span class=\"ds-sweep-fill\"></span></div>",
+      "css": ".ds-sweep { position: relative; overflow: hidden; isolation: isolate; aspect-ratio: 4 / 3; width: 100%; background: #0e1113; } .ds-sweep-fill { position: absolute; inset: 0; background: linear-gradient(160deg, #1e2427 0%, #08090a 70%); } .ds-sweep::after { content: ''; position: absolute; inset: -30% -60%; z-index: 2; pointer-events: none; background: linear-gradient(104deg, transparent 38%, rgb(255 255 255 / 0.05) 46%, rgb(255 255 255 / 0.15) 50%, rgb(255 255 255 / 0.05) 54%, transparent 62%); transform: translateX(-58%); animation: ds-sweep 8s cubic-bezier(0.16,1,0.3,1) infinite; } @keyframes ds-sweep { 0%, 60% { transform: translateX(-58%); } 100% { transform: translateX(58%); } } .ds-grain::before { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0.45; mix-blend-mode: overlay; background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.42'/%3E%3C/svg%3E\"); } @media (prefers-reduced-motion: reduce) { .ds-sweep::after { animation-duration: 0.001ms; animation-iteration-count: 1; } }"
+    },
+    {
+      "name": "FAQ Disclosure",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Native details/summary row: sub-rank question on a hairline with a carmine plus that rotates to a minus when open.",
+      "html": "<details class=\"ds-faq\"><summary><h3>Do you need my water and power?</h3><span class=\"ds-faq-glyph\" aria-hidden=\"true\"><i></i><i></i></span></summary><div class=\"ds-faq-body\"><p>No. The rig carries filtered water, its own pump and its own power, so nothing plugs into your house.</p></div></details>",
+      "css": ".ds-faq { border-top: 1px solid #262c30; border-bottom: 1px solid #262c30; background: #08090a; } .ds-faq summary { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; padding: 1.25rem 0; cursor: pointer; list-style: none; } .ds-faq summary::-webkit-details-marker { display: none; } .ds-faq h3 { margin: 0; max-width: 52ch; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 1.35rem; font-weight: 600; font-stretch: 96%; line-height: 1.16; letter-spacing: -0.02em; color: #f3f2ee; transition: color 0.2s cubic-bezier(0.16,1,0.3,1); } .ds-faq:hover h3 { color: #e97078; } .ds-faq-glyph { position: relative; display: block; flex: 0 0 auto; width: 0.75rem; height: 0.75rem; margin-top: 0.5rem; } .ds-faq-glyph i { position: absolute; top: 50%; left: 0; display: block; width: 0.75rem; height: 1.5px; background: #e97078; transform: translateY(-50%); } .ds-faq-glyph i:last-child { transform: translateY(-50%) rotate(90deg); transition: transform 0.3s cubic-bezier(0.16,1,0.3,1); } .ds-faq[open] .ds-faq-glyph i:last-child { transform: translateY(-50%) rotate(0deg); } .ds-faq-body { padding: 0 2.5rem 1.5rem 0; } .ds-faq-body p { margin: 0; max-width: 70ch; color: #aab1b7; font-family: 'Public Sans', system-ui, Arial, sans-serif; line-height: 1.65; }"
+    },
+    {
+      "name": "Wordmark",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Stacked lockup: a 3px carmine rule beside heavy compressed BOSS over a wide-tracked discipline line.",
+      "html": "<a class=\"ds-wordmark\" href=\"#\" aria-label=\"Boss Auto Detailing — home\"><span class=\"ds-wordmark-rule\" aria-hidden=\"true\"></span><span class=\"ds-wordmark-text\"><span class=\"ds-wordmark-name\">BOSS</span><span class=\"ds-wordmark-line\">AUTO&nbsp;DETAILING</span></span></a>",
+      "css": ".ds-wordmark { display: inline-flex; align-items: stretch; gap: 0.75rem; text-decoration: none; background: #08090a; padding: 0.5rem; } .ds-wordmark-rule { display: block; width: 3px; background: #a81e22; transition: background-color 0.3s cubic-bezier(0.16,1,0.3,1); } .ds-wordmark:hover .ds-wordmark-rule { background: #e97078; } .ds-wordmark-text { display: block; line-height: 1; } .ds-wordmark-name { display: block; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-weight: 800; font-stretch: 88%; letter-spacing: -0.035em; font-size: 1.4rem; color: #f3f2ee; } .ds-wordmark-line { display: block; margin-top: 3px; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 0.6rem; letter-spacing: 0.235em; color: #838b92; } .ds-wordmark:focus-visible { outline: 2px solid #e97078; outline-offset: 3px; border-radius: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Inspection Bay",
+    "overview": "The site is lit the way corrected paint is inspected: a near-black room, one raking light, and a surface that either holds a clean reflection or does not. Every visual decision follows from that. The ground is graphite rather than white because the product being sold is reflected light — swirl marks, gloss and coating depth are only legible against a dark field, and the buying moment is a phone screen in a driveway at dusk. Type is bone and cool silver on that ground; the single carmine is the colour of the action, never of the decoration.\n\nDensity is editorial, not promotional. Structure is carried by hairlines and by 1px gaps in dark grids, so sections divide without any object floating above the page. Where a competitor would place a rounded icon card, this build places a label/value spec row on a rule. Where a competitor would place a badge cluster, it places a photograph at full bleed. The one authored motion moment — a specular clear-coat sweep travelling across a surface like an inspection lamp across a panel — is a material signature, not an interaction reward.\n\nThe confirmed rejection is the local-contractor template: stacked icon cards, trust-badge rows, three-column feature grids with drop shadows, and a second decorative accent hue. This site sells a shop, not a car wash, and its surfaces are supposed to look measured.",
+    "keyCharacteristics": [
+      "Near-black graphite ground on every page; no light-mode alternative exists.",
+      "One accent hue (carmine) in three steps, used almost exclusively on actions and marks.",
+      "Square by default: zero corner radius on every panel, button, field and image.",
+      "Hairline rules and 1px grid gaps in place of borders-plus-shadows.",
+      "Compressed Archivo display against Public Sans text, set tight and negative-tracked.",
+      "Full-bleed photography, normalised to one grade, as the only decoration."
+    ],
+    "rules": [
+      {
+        "name": "The One Lamp Rule",
+        "body": "Carmine is the only hue on the page. If a new element needs a colour to mean something, it earns carmine or it stays in the graphite ramp; a second accent hue is not available.",
+        "section": "colors"
+      },
+      {
+        "name": "The Inversion Budget Rule",
+        "body": "Chalk exists to make exactly one thing win — the featured tier. A page carries at most one chalk panel, or the inversion stops meaning \"this one\".",
+        "section": "colors"
+      },
+      {
+        "name": "The Hairline Structure Rule",
+        "body": "Separation is a 1px line or a 1px gap in the line colour, never a box. A grid separates by gap: 1px over a line-coloured background so divisions weigh the same as rules.",
+        "section": "colors"
+      },
+      {
+        "name": "The Slash Mark Rule",
+        "body": "A section announces itself with one kicker system and one only: an uppercase muted label preceded by a carmine slash. No eyebrow variants, no pill kickers, no numbered chips in its place.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Voice Per Screen Rule",
+        "body": "Exactly one hero-rank element per page. A second element at hero size means the page has two headlines and no hierarchy.",
+        "section": "typography"
+      },
+      {
+        "name": "The Compression Rule",
+        "body": "Display type is always compressed and negative-tracked (wdth 88-96, tracking -0.02em to -0.04em). Archivo at default width is not part of this system.",
+        "section": "typography"
+      },
+      {
+        "name": "The No-Float Rule",
+        "body": "No element in this system casts a shadow. If something must separate from what is behind it, it takes a hairline, a darker ink step, or a scrim — in that order.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Scrim-Not-Overlay Rule",
+        "body": "Text over photography is made legible by a directional ink gradient anchored to the text's own corner, never by a flat black wash and never by a text shadow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do open every section with the slash mark, then a section-rank headline, in that order.",
+      "Do express facts as label/value spec rows on hairlines, and features as bordered term/description pairs.",
+      "Do separate grid items with gap: 1px over a line-coloured background so the gaps read as rules.",
+      "Do keep body prose in silver at 70ch and ledes at 48ch; cap headlines at 17-20ch.",
+      "Do run the hero photograph full-bleed with a directional ink scrim and the headline bottom-left.",
+      "Do pair a filled carmine action with a ghost action; the call is the filled one.",
+      "Do put new photography through the shared grade in scripts/build-images.mjs (saturation 0.76, contrast 1.08/-6, gamma 1.03) before it enters the site.",
+      "Do gate any new scroll-linked animation behind @supports (animation-timeline: view()) so content is never hidden by default.",
+      "Do caption any illustrative or simulated image with what it actually is."
+    ],
+    "donts": [
+      "Don't introduce a second accent hue, a gradient-filled button, or a trust-badge row.",
+      "Don't build a feature as a rounded icon card with a shadow; the spec row and the bordered term/description pair exist for that job.",
+      "Don't add a drop shadow to any element — separation is hairline, ink step, or scrim.",
+      "Don't round the corners of a panel, button, field or image; radius is reserved for focus rings and genuinely circular controls.",
+      "Don't scatter the clear-coat sweep onto hover states or run it on more than a couple of surfaces per page.",
+      "Don't set display type at Archivo's default width or with positive tracking.",
+      "Don't put more than one hero-rank headline or more than one chalk-inverted panel on a page.",
+      "Don't place a light panel on a page for contrast alone; chalk means \"this tier wins\".",
+      "Don't use literal #000; scrims and masks build from the ink token.",
+      "Don't invent a label size between two steps of the seven-step family, or a fourth display clamp between List heading and Title.",
+      "Don't add `position` to the .sweep utility, however tempting; it lands after Tailwind's utilities in the same layer and collapses every hero that uses it."
+    ]
+  }
+}

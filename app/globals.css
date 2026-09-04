@@ -1,0 +1,489 @@
+@import "tailwindcss";
+
+/*
+  BOSS AUTO DETAILING — visual system.
+  The ground is near-black because the product is reflected light: swirl
+  marks, gloss and coating depth are only legible against a dark field, and
+  the buying moment is a phone screen in a driveway at dusk.
+*/
+
+@theme {
+  /* Ground */
+  --color-ink: #08090a;
+  --color-ink-2: #0e1113;
+  --color-ink-3: #161b1e;
+  --color-ink-4: #1e2427;
+
+  /* Hairlines */
+  --color-line: #262c30;
+  --color-line-soft: #1a1f22;
+
+  /* Type */
+  --color-bone: #f3f2ee;
+  --color-silver: #aab1b7;
+  --color-muted: #838b92;
+
+  /* Action */
+  --color-carmine: #a81e22;
+  --color-carmine-hi: #c4262c;
+  --color-carmine-lt: #e97078;
+
+  /* Light surface, for the single inverted panel per page */
+  --color-chalk: #edece7;
+
+  --font-display: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
+  --font-body: var(--font-public-sans), system-ui, -apple-system, Arial, sans-serif;
+
+  /* This system is flat: separation is hairline, ink step or scrim. */
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  :root {
+    --header-h: 74px;
+    --gutter: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    :root {
+      --header-h: 88px;
+      --gutter: 2rem;
+    }
+  }
+
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-h) + 1rem);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-bone);
+    font-family: var(--font-body);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.028em;
+    line-height: 1;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: var(--color-carmine);
+    color: var(--color-bone);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-carmine-lt);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    font: inherit;
+    color: inherit;
+  }
+}
+
+@layer components {
+  /* ---- Layout shell -------------------------------------------------- */
+  .wrap {
+    width: 100%;
+    max-width: 82rem;
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+
+  .wrap-tight {
+    width: 100%;
+    max-width: 58rem;
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+
+  /* ---- Type ranks ---------------------------------------------------- */
+  .rank-hero {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-stretch: 92%;
+    font-size: clamp(2.55rem, 7.2vw, 5.4rem);
+    line-height: 0.94;
+    letter-spacing: -0.035em;
+  }
+
+  .rank-section {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-stretch: 94%;
+    font-size: clamp(1.9rem, 4vw, 3.25rem);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+  }
+
+  /* The headline inside a repeating row: service pillars, city links,
+     job-timeline day heads. One step, one class — see DESIGN.md. */
+  .rank-list {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-stretch: 94%;
+    font-size: clamp(1.6rem, 3vw, 2.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+
+  .rank-sub {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-stretch: 96%;
+    font-size: clamp(1.2rem, 2vw, 1.55rem);
+    line-height: 1.16;
+    letter-spacing: -0.02em;
+  }
+
+  /* Slash-prefixed section mark. One kicker system, section heads only. */
+  .mark {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.55ch;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+
+  .mark::before {
+    content: "/";
+    color: var(--color-carmine-lt);
+    font-weight: 700;
+  }
+
+  .lede {
+    font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+    line-height: 1.6;
+    color: var(--color-silver);
+    max-width: 48ch;
+  }
+
+  .prose-body {
+    color: var(--color-silver);
+    max-width: 70ch;
+  }
+
+  .prose-body p + p {
+    margin-top: 1.05em;
+  }
+
+  .prose-body strong {
+    color: var(--color-bone);
+    font-weight: 600;
+  }
+
+  /* ---- Spec rows: label / value on a hairline ------------------------ */
+  .spec {
+    display: grid;
+    grid-template-columns: minmax(6.5rem, 11ch) 1fr;
+    gap: 0.6rem 1.5rem;
+    border-top: 1px solid var(--color-line);
+    padding-block: 0.85rem;
+    align-items: start;
+  }
+
+  .spec dt {
+    font-family: var(--font-display);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    padding-top: 0.3rem;
+  }
+
+  .spec dd {
+    color: var(--color-bone);
+    font-size: 0.97rem;
+    line-height: 1.5;
+  }
+
+  /* ---- Actions ------------------------------------------------------- */
+  .btn {
+    --btn-bg: var(--color-carmine);
+    --btn-fg: var(--color-bone);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    min-height: 3.25rem;
+    padding-inline: 1.6rem;
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.84rem;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    text-align: center;
+    transition:
+      background-color 0.25s var(--ease-out-expo),
+      transform 0.25s var(--ease-out-expo),
+      border-color 0.25s var(--ease-out-expo);
+  }
+
+  .btn:hover {
+    --btn-bg: var(--color-carmine-hi);
+  }
+
+  .btn:active {
+    transform: translateY(1px);
+  }
+
+  .btn[disabled],
+  .btn[aria-disabled="true"] {
+    --btn-bg: var(--color-ink-4);
+    --btn-fg: var(--color-muted);
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .btn-ghost {
+    --btn-bg: transparent;
+    --btn-fg: var(--color-bone);
+    border-color: var(--color-line);
+  }
+
+  .btn-ghost:hover {
+    --btn-bg: var(--color-ink-3);
+    border-color: var(--color-muted);
+  }
+
+  .link-inline {
+    color: var(--color-carmine-lt);
+    text-underline-offset: 0.22em;
+    text-decoration-thickness: 1px;
+    text-decoration-line: underline;
+    text-decoration-color: color-mix(in srgb, var(--color-carmine-lt) 45%, transparent);
+    transition: text-decoration-color 0.2s var(--ease-out-expo);
+  }
+
+  .link-inline:hover {
+    text-decoration-color: var(--color-carmine-lt);
+  }
+
+  .link-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-bone);
+  }
+
+  .link-more svg {
+    transition: transform 0.35s var(--ease-out-expo);
+  }
+
+  .link-more:hover svg,
+  a:hover .link-more svg,
+  .group:hover .link-more svg {
+    transform: translateX(0.35rem);
+  }
+
+  /* ---- Form fields --------------------------------------------------- */
+  .field > span {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .control {
+    width: 100%;
+    min-height: 3.25rem;
+    padding: 0.75rem 1rem;
+    background: var(--color-ink-2);
+    border: 1px solid var(--color-line);
+    color: var(--color-bone);
+    transition:
+      border-color 0.2s var(--ease-out-expo),
+      background-color 0.2s var(--ease-out-expo);
+  }
+
+  .control::placeholder {
+    color: var(--color-muted);
+  }
+
+  .control:hover {
+    border-color: var(--color-ink-4);
+  }
+
+  .control:focus {
+    outline: none;
+    border-color: var(--color-carmine-lt);
+    background: var(--color-ink-3);
+  }
+
+  .control[aria-invalid="true"] {
+    border-color: var(--color-carmine-lt);
+  }
+
+  textarea.control {
+    min-height: 8rem;
+    resize: vertical;
+    line-height: 1.6;
+  }
+}
+
+@layer utilities {
+  /*
+    Clear-coat sweep — the site's one authored motion moment, reused as a
+    material signature: a specular band travelling across a surface the way
+    an inspection lamp travels across a panel. Marks the primary image and
+    the section rules; never scattered onto hover states.
+  */
+  .sweep {
+    /*
+      Deliberately does NOT set `position`. This rule lands in @layer
+      utilities after Tailwind's own, so a `position` here would win over
+      `.absolute`/`.relative` at equal specificity and collapse the element.
+      Every call site declares its own positioning.
+    */
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .sweep::after {
+    content: "";
+    position: absolute;
+    inset: -30% -60%;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(
+      104deg,
+      transparent 38%,
+      rgb(255 255 255 / 0.05) 46%,
+      rgb(255 255 255 / 0.15) 50%,
+      rgb(255 255 255 / 0.05) 54%,
+      transparent 62%
+    );
+    transform: translateX(-58%);
+    animation: sweep 8s var(--ease-out-expo) infinite;
+  }
+
+  @keyframes sweep {
+    0%,
+    60% {
+      transform: translateX(-58%);
+    }
+    100% {
+      transform: translateX(58%);
+    }
+  }
+
+  .rule-sweep {
+    height: 1px;
+    border: 0;
+    background: linear-gradient(
+      90deg,
+      var(--color-line) 0%,
+      var(--color-line) 32%,
+      color-mix(in srgb, var(--color-carmine-lt) 55%, transparent) 50%,
+      var(--color-line) 68%,
+      var(--color-line) 100%
+    );
+    background-size: 280% 100%;
+    animation: rule-drift 12s linear infinite;
+  }
+
+  @keyframes rule-drift {
+    from {
+      background-position: 140% 0;
+    }
+    to {
+      background-position: -140% 0;
+    }
+  }
+
+  /*
+    Scroll entrance. Content is fully visible by default; the animation is
+    attached only where a view timeline exists, so a browser without it
+    never sees a page-load mass fade.
+  */
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .rise {
+        animation: rise 0.9s var(--ease-out-expo) both;
+        animation-timeline: view();
+        animation-range: entry 0% cover 24%;
+      }
+    }
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0.42;
+      transform: translateY(1.75rem);
+      filter: blur(4px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
+  }
+
+  .grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.45;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.42'/%3E%3C/svg%3E");
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
