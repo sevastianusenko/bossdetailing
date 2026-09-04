@@ -13,31 +13,31 @@ export const metadata: Metadata = {
 };
 
 /*
-  REPLACE BEFORE LAUNCH. These are licensed reference photographs, not
-  Boss Auto Detailing's own jobs. The page says so in plain sight below the
-  grid. Swap the files in /public/images for the client's own work and
-  delete the disclosure line. See HANDOFF.md.
+  Frames 1 to 4 are Boss Auto Detailing's own job photography. The rest are
+  licensed reference frames and the page says so below the grid. Replace
+  them as more of the client's work is documented, then delete the
+  disclosure. See HANDOFF.md and public/images/CREDITS.txt.
 */
 const shots = [
   {
     src: "/images/gallery-1.jpg",
-    alt: "Detailer reaching into a cabin to wipe down the interior",
-    caption: "Cabin work, done by hand and by the inch",
+    alt: "Full-size SUV finished and rinsed on a customer driveway",
+    caption: "Our work: a full-size SUV, finished on the driveway",
   },
   {
     src: "/images/gallery-2.jpg",
-    alt: "Vacuum nozzle drawing soil out of a car carpet",
-    caption: "Extraction pulls the soil out of the fiber",
+    alt: "Snow foam being rinsed from the flank of a full-size SUV",
+    caption: "Our work: the foam coming off, mid-wash",
   },
   {
     src: "/images/gallery-3.jpg",
-    alt: "Wheel and tire being scrubbed by hand with suds",
-    caption: "Wheels and tires, cleaned by hand",
+    alt: "Cleaned dashboard, vents and passenger seat of a Ford Explorer",
+    caption: "Our work: dash, vents and seat after an interior detail",
   },
   {
     src: "/images/gallery-4.jpg",
-    alt: "Steering wheel and switch gear being wiped down by hand",
-    caption: "The surfaces you touch every day, done properly",
+    alt: "Cleaned steering wheel and instrument cluster of a Ford Explorer",
+    caption: "Our work: the surfaces you touch every day",
   },
   {
     src: "/images/gallery-5.jpg",
@@ -160,10 +160,10 @@ export default function GalleryPage() {
           </div>
 
           <p className="mt-6 max-w-[70ch] text-sm text-muted">
-            Reference photography. Boss Auto Detailing&rsquo;s own job
-            documentation is being added as work is completed. Ask on the
-            phone if you want to see a specific service on a specific vehicle
-            before booking.
+            The first four frames are our own jobs. The rest are reference
+            photography while we build the library, and we would rather label
+            that than let you assume. Ask on the phone if you want to see a
+            specific service on a specific vehicle before booking.
           </p>
         </div>
       </section>

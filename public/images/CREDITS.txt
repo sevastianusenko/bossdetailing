@@ -1,33 +1,36 @@
-Reference photography — Pexels (free to use, attribution not required).
-REPLACE ALL OF THESE with Boss Auto Detailing's own job photography.
+Boss Auto Detailing image credits.
 
-hero.jpg  https://www.pexels.com/photo/4876639/
-rig.jpg  https://www.pexels.com/photo/20042048/
-area.jpg  https://www.pexels.com/photo/32403749/
-interior-detailing.jpg  https://www.pexels.com/photo/5233285/
-exterior-detailing.jpg  https://www.pexels.com/photo/7154632/
-paint-correction.jpg  https://www.pexels.com/photo/5233258/
-ceramic-coating.jpg  https://www.pexels.com/photo/17216298/
-headlight-restoration.jpg  https://www.pexels.com/photo/4870702/
-pre-sale-detailing.jpg  https://www.pexels.com/photo/16510645/
-fleet-detailing.jpg  https://www.pexels.com/photo/33623769/
-services-hero.jpg  https://www.pexels.com/photo/14615262/
-packages-hero.jpg  https://www.pexels.com/photo/6872572/
-faq-hero.jpg  https://www.pexels.com/photo/14908957/
-about-hero.jpg  https://www.pexels.com/photo/35149470/
-about-side.jpg  https://www.pexels.com/photo/35149473/
-contact-hero.jpg  https://www.pexels.com/photo/32073602/
-gallery-hero.jpg  https://www.pexels.com/photo/6872162/
-area-vancouver.jpg  https://www.pexels.com/photo/186077/
-area-portland.jpg  https://www.pexels.com/photo/19665312/
-area-suburb.jpg  https://www.pexels.com/photo/5353883/
-correction-after.jpg  https://www.pexels.com/photo/29755711/
-gallery-1.jpg  https://www.pexels.com/photo/6873185/
-gallery-2.jpg  https://www.pexels.com/photo/5233264/
-gallery-3.jpg  https://www.pexels.com/photo/4870705/
-gallery-4.jpg  https://www.pexels.com/photo/6873015/
-gallery-5.jpg  https://www.pexels.com/photo/248395/
-gallery-6.jpg  https://www.pexels.com/photo/12190248/
-gallery-7.jpg  https://www.pexels.com/photo/28571826/
-gallery-8.jpg  https://www.pexels.com/photo/8237050/
+REAL: the client's own job photography. Keep.
+  interior-detailing.jpg  <- 4956687487505992978.jpg
+  exterior-detailing.jpg  <- 4956687487505992955.jpg
+  gallery-1.jpg  <- 4956687487505992954.jpg
+  gallery-2.jpg  <- 4956687487505992956.jpg
+  gallery-3.jpg  <- 4956687487505992973.jpg
+  gallery-4.jpg  <- 4956687487505992981.jpg
+
+REFERENCE: licensed Pexels frames, free to use, attribution not required.
+Replace these with the client's own work as it is documented.
+  hero.jpg  https://www.pexels.com/photo/4876639/
+  rig.jpg  https://www.pexels.com/photo/20042048/
+  area.jpg  https://www.pexels.com/photo/32403749/
+  paint-correction.jpg  https://www.pexels.com/photo/5233258/
+  ceramic-coating.jpg  https://www.pexels.com/photo/17216298/
+  headlight-restoration.jpg  https://www.pexels.com/photo/4870702/
+  pre-sale-detailing.jpg  https://www.pexels.com/photo/16510645/
+  fleet-detailing.jpg  https://www.pexels.com/photo/33623769/
+  services-hero.jpg  https://www.pexels.com/photo/14615262/
+  packages-hero.jpg  https://www.pexels.com/photo/6872572/
+  faq-hero.jpg  https://www.pexels.com/photo/14908957/
+  about-hero.jpg  https://www.pexels.com/photo/35149470/
+  about-side.jpg  https://www.pexels.com/photo/35149473/
+  contact-hero.jpg  https://www.pexels.com/photo/32073602/
+  gallery-hero.jpg  https://www.pexels.com/photo/6872162/
+  area-vancouver.jpg  https://www.pexels.com/photo/186077/
+  area-portland.jpg  https://www.pexels.com/photo/19665312/
+  area-suburb.jpg  https://www.pexels.com/photo/5353883/
+  correction-after.jpg  https://www.pexels.com/photo/29755711/
+  gallery-5.jpg  https://www.pexels.com/photo/248395/
+  gallery-6.jpg  https://www.pexels.com/photo/12190248/
+  gallery-7.jpg  https://www.pexels.com/photo/28571826/
+  gallery-8.jpg  https://www.pexels.com/photo/8237050/
 correction-before.jpg  simulated clear-coat marring over correction-after.jpg

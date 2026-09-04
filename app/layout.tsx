@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { StickyCall } from "@/components/StickyCall";
+import { PromoDialog } from "@/components/PromoDialog";
 import { JsonLd, localBusinessSchema } from "@/components/JsonLd";
 import { site } from "@/lib/site";
 
@@ -97,6 +98,7 @@ export default function RootLayout({
         <main id="main">{children}</main>
         <Footer />
         <StickyCall />
+        <PromoDialog />
 
         <JsonLd data={localBusinessSchema()} />
       </body>

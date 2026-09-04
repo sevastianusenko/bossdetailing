@@ -55,7 +55,7 @@ export const services: Service[] = [
       { label: "Not included", value: "Cabin filter replacement, upholstery repair, mold remediation" },
     ],
     image: "/images/interior-detailing.jpg",
-    imageAlt: "Vacuum nozzle deep-cleaning a fabric car seat",
+    imageAlt: "Cleaned driver footwell and all-weather mat after an interior detail",
   },
   {
     slug: "exterior-detailing",
@@ -89,7 +89,7 @@ export const services: Service[] = [
       { label: "Note", value: "Decontamination is required before correction or coating" },
     ],
     image: "/images/exterior-detailing.jpg",
-    imageAlt: "Detailer working spray product across a wet hood by hand",
+    imageAlt: "Full-size SUV under snow foam on a residential driveway",
   },
   {
     slug: "paint-correction",

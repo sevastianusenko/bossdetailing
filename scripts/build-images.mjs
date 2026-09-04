@@ -24,6 +24,9 @@ const WIDE = [2000, 1250];
 const CARD = [1400, 1050];
 const SQUARE = [1200, 1200];
 const PORTRAIT = [1100, 1467];
+/** Client phone photography is 960x1280. These sizes never upscale it. */
+const CARD_REAL = [960, 720];
+const SQUARE_REAL = [940, 940];
 
 const manifest = [
   // Home
@@ -32,8 +35,10 @@ const manifest = [
   { file: "area.jpg", id: 32403749, size: WIDE },
 
   // Services
-  { file: "interior-detailing.jpg", id: 5233285, size: CARD, grade: { saturation: 0.5, cool: true } },
-  { file: "exterior-detailing.jpg", id: 7154632, size: CARD },
+  // Real job: Ford Explorer footwell after extraction.
+  { file: "interior-detailing.jpg", id: "4956687487505992978.jpg", size: CARD_REAL, real: true },
+  // Real job: full-size SUV under snow foam on a residential driveway.
+  { file: "exterior-detailing.jpg", id: "4956687487505992955.jpg", size: CARD_REAL, real: true },
   { file: "paint-correction.jpg", id: 5233258, size: CARD },
   { file: "ceramic-coating.jpg", id: 17216298, size: CARD },
   { file: "headlight-restoration.jpg", id: 4870702, size: CARD },
@@ -60,10 +65,10 @@ const manifest = [
   { file: "correction-after.jpg", id: 29755711, size: WIDE, grade: { brightness: 1.45, a: 1.18, b: 6 } },
 
   // Gallery
-  { file: "gallery-1.jpg", id: 6873185, size: SQUARE },
-  { file: "gallery-2.jpg", id: 5233264, size: SQUARE, grade: { saturation: 0.5, cool: true } },
-  { file: "gallery-3.jpg", id: 4870705, size: SQUARE },
-  { file: "gallery-4.jpg", id: 6873015, size: SQUARE },
+  { file: "gallery-1.jpg", id: "4956687487505992954.jpg", size: SQUARE_REAL, real: true },
+  { file: "gallery-2.jpg", id: "4956687487505992956.jpg", size: SQUARE_REAL, real: true },
+  { file: "gallery-3.jpg", id: "4956687487505992973.jpg", size: SQUARE_REAL, real: true },
+  { file: "gallery-4.jpg", id: "4956687487505992981.jpg", size: SQUARE_REAL, real: true },
   { file: "gallery-5.jpg", id: 248395, size: SQUARE, grade: { saturation: 0.3, cool: true } },
   { file: "gallery-6.jpg", id: 12190248, size: SQUARE },
   { file: "gallery-7.jpg", id: 28571826, size: SQUARE },
@@ -73,10 +78,18 @@ const manifest = [
 mkdirSync(outDir, { recursive: true });
 mkdirSync(cacheDir, { recursive: true });
 
+/** Client photography lives here, at its native resolution. */
+const localDir = join(root, "public", "images");
+
 const src = (id) =>
   `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=2400`;
 
 function download(id) {
+  // A manifest entry can name a local file instead of a Pexels id.
+  if (typeof id === "string" && id.endsWith(".jpg")) {
+    return readFileSync(join(localDir, id));
+  }
+
   const cached = join(cacheDir, `${id}.jpg`);
   if (existsSync(cached) && !force) return readFileSync(cached);
 
@@ -206,10 +219,18 @@ for (const item of manifest) {
 writeFileSync(
   join(outDir, "CREDITS.txt"),
   [
-    "Reference photography — Pexels (free to use, attribution not required).",
-    "REPLACE ALL OF THESE with Boss Auto Detailing's own job photography.",
+    "Boss Auto Detailing image credits.",
     "",
-    ...manifest.map((m) => `${m.file}  https://www.pexels.com/photo/${m.id}/`),
+    "REAL: the client's own job photography. Keep.",
+    ...manifest
+      .filter((m) => m.real)
+      .map((m) => `  ${m.file}  <- ${m.id}`),
+    "",
+    "REFERENCE: licensed Pexels frames, free to use, attribution not required.",
+    "Replace these with the client's own work as it is documented.",
+    ...manifest
+      .filter((m) => !m.real)
+      .map((m) => `  ${m.file}  https://www.pexels.com/photo/${m.id}/`),
     "correction-before.jpg  simulated clear-coat marring over correction-after.jpg",
   ].join("\n"),
 );

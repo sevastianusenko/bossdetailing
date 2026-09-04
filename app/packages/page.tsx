@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { packages, sizeTiers, formatUsd } from "@/lib/packages";
+import { promo, promoEndsLabel, promoIsLive } from "@/lib/promo";
 import { site } from "@/lib/site";
 import { PageHero } from "@/components/PageHero";
 import { CtaBand } from "@/components/CtaBand";
@@ -32,6 +33,29 @@ export default function PackagesPage() {
         imageAlt="Microfiber towel drawn across a dark, polished panel"
         crumbs={[{ label: "Home", href: "/" }]}
       />
+
+      {/*
+        The offer also lives outside the dialog. A promotion a visitor can
+        only find by not dismissing a popup is a promotion half the audience
+        never sees.
+      */}
+      {promoIsLive() && (
+        <section className="border-b border-line bg-carmine/12">
+          <div className="wrap flex flex-col gap-4 py-6 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="mark">{promo.eyebrow}</p>
+              <p className="mt-2 font-display text-xl font-bold tracking-[-0.02em] text-bone">
+                {promo.headline}
+              </p>
+            </div>
+            <p className="max-w-[46ch] text-sm leading-relaxed text-silver">
+              Two cars at the same address on one visit. The discount applies
+              to the lower-priced of the two, and the offer ends{" "}
+              {promoEndsLabel()}.
+            </p>
+          </div>
+        </section>
+      )}
 
       <section className="border-t border-line py-16 md:py-24">
         <div className="wrap">

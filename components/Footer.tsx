@@ -14,7 +14,7 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-12 md:gap-8">
           {/* Business record */}
           <div className="md:col-span-4">
-            <Wordmark />
+            <Wordmark size="footer" />
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-silver">
               Self-contained mobile detailing for both sides of the Columbia.
               We bring the shop to your driveway, your office lot or your yard.
@@ -109,6 +109,7 @@ export function Footer() {
               {[
                 { href: "/about", label: "About" },
                 { href: "/gallery", label: "Work" },
+                { href: "/blog", label: "Advice" },
                 { href: "/faq", label: "FAQ" },
                 { href: "/contact", label: "Contact" },
               ].map((l) => (

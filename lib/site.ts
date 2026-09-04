@@ -56,6 +56,7 @@ export const nav: { label: string; href: string }[] = [
   { label: "Services", href: "/services" },
   { label: "Packages", href: "/packages" },
   { label: "Work", href: "/gallery" },
+  { label: "Advice", href: "/blog" },
   { label: "Service Area", href: "/service-areas" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },

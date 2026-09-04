@@ -24,10 +24,10 @@ const heroFacts = [
 ];
 
 const galleryShots = [
-  { src: "/images/gallery-1.jpg", alt: "Detailer reaching into a cabin to wipe down the interior" },
-  { src: "/images/gallery-2.jpg", alt: "Vacuum nozzle drawing soil out of a car carpet" },
-  { src: "/images/gallery-3.jpg", alt: "Wheel and tire being scrubbed by hand with suds" },
-  { src: "/images/gallery-4.jpg", alt: "Steering wheel and switch gear being wiped down by hand" },
+  { src: "/images/gallery-1.jpg", alt: "Full-size SUV finished and rinsed on a customer driveway" },
+  { src: "/images/gallery-2.jpg", alt: "Snow foam being rinsed from the flank of a full-size SUV" },
+  { src: "/images/gallery-3.jpg", alt: "Cleaned dashboard, vents and passenger seat of a Ford Explorer" },
+  { src: "/images/gallery-4.jpg", alt: "Cleaned steering wheel and instrument cluster of a Ford Explorer" },
   { src: "/images/gallery-5.jpg", alt: "Water standing in tight beads on a glossy panel" },
   { src: "/images/gallery-6.jpg", alt: "Light leather seat and console cleaned to a matte finish" },
 ];
@@ -530,8 +530,8 @@ export default function HomePage() {
 
         <div className="wrap mt-6">
           <p className="max-w-[70ch] text-sm text-muted">
-            Reference photography. Boss Auto Detailing&rsquo;s own job
-            documentation is being added as work is completed.
+            The first four frames are our own jobs. The rest are reference
+            photography while we build the library.
           </p>
         </div>
       </section>

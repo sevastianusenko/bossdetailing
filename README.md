@@ -1,4 +1,4 @@
-# Boss Auto Detailing — autodetailingwa.com
+# Boss Auto Detailing: autodetailingwa.com
 
 Marketing site for Boss Auto Detailing LLC, a self-contained mobile detailing
 operation based in Vancouver, WA and working both sides of the Columbia.
@@ -23,10 +23,11 @@ placeholders and are flagged in code.
 
 | Route | Notes |
 |---|---|
-| `/` | Home. Hero → mechanism → four pillars → correction proof → packages → process → service area → work → FAQ → request form |
+| `/` | Home. Hero -> mechanism -> four pillars -> correction proof -> packages -> process -> service area -> work -> FAQ -> request form |
 | `/services` + `/services/[slug]` | 7 service pages, `Service` schema each |
 | `/service-areas` + `/service-areas/[slug]` | 7 city pages with genuinely local copy |
 | `/packages` | Three tiers, size surcharges, condition note |
+| `/blog` + `/blog/[slug]` | 15 posts, `BlogPosting` and `FAQPage` schema |
 | `/gallery` `/about` `/faq` `/contact` | |
 | `/api/request` | Form handler, posts to Resend when configured |
 
@@ -36,12 +37,12 @@ All content lives in `lib/`. See the map at the end of HANDOFF.md.
 
 `PRODUCT.md` holds the product record. `DESIGN.md` documents the visual system
 as built. The direction contract is an HTML comment at the top of the emitted
-`<body>` — see `DIRECTION_CONTRACT` in `app/layout.tsx`.
+`<body>`: see `DIRECTION_CONTRACT` in `app/layout.tsx`.
 
 Short version: near-black graphite ground because the product is reflected
 light; bone and cool-silver type; one carmine action colour; hairline rules and
 label/value spec rows instead of cards; compressed Archivo display against
-Public Sans text; a single authored motion moment — the clear-coat sweep —
+Public Sans text; and a single authored motion moment, the clear-coat sweep,
 reused as the material signature.
 
 ## Scripts
@@ -50,4 +51,7 @@ reused as the material signature.
 node scripts/find-photos.mjs "car detailing" ...   # stock candidates + alt text
 node scripts/build-images.mjs [--force]            # download + one shared grade
 node scripts/shots.mjs [baseUrl]                   # desktop + mobile capture
+node scripts/contact-sheet.mjs                     # review all site imagery at once
+node scripts/candidate-sheet.mjs <pexels ids...>   # review replacement candidates
+node scripts/shot-one.mjs <url> <out> [--promo]    # one page, optionally triggering the dialog
 ```
