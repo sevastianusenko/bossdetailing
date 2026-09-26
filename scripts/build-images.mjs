@@ -27,6 +27,11 @@ const PORTRAIT = [1100, 1467];
 /** Client phone photography is 960x1280. These sizes never upscale it. */
 const CARD_REAL = [960, 720];
 const SQUARE_REAL = [940, 940];
+/** A second batch of client photos, WhatsApp-compressed to ~600px. A mild
+ *  upscale here still reads as an authentic phone photo at grid-tile size. */
+const CARD_PHONE = [640, 480];
+const SQUARE_PHONE = [640, 640];
+const WIDE_PHONE = [900, 560];
 
 const manifest = [
   // Home
@@ -56,15 +61,35 @@ const manifest = [
   { file: "area-portland.jpg", id: 19665312, size: WIDE },
   { file: "area-suburb.jpg", id: 5353883, size: WIDE },
 
-  // Gallery
+  // Gallery: job 1 (SUV wash + Ford Explorer interior)
   { file: "gallery-1.jpg", id: "4956687487505992954.jpg", size: SQUARE_REAL, real: true },
   { file: "gallery-2.jpg", id: "4956687487505992956.jpg", size: SQUARE_REAL, real: true },
   { file: "gallery-3.jpg", id: "4956687487505992973.jpg", size: SQUARE_REAL, real: true },
   { file: "gallery-4.jpg", id: "4956687487505992981.jpg", size: SQUARE_REAL, real: true },
   { file: "gallery-5.jpg", id: 248395, size: SQUARE, grade: { saturation: 0.3, cool: true } },
-  { file: "gallery-6.jpg", id: 12190248, size: SQUARE },
+  // NOTE: the raw sources for the six entries above (4956687487505992*.jpg)
+  // were deleted after grading and are not recoverable. --force will fail on
+  // them; delete those four lines' "id" targets from cache first, or accept
+  // that these four files just cannot be regenerated from scratch anymore.
+  // Real: Mercedes S-Class dash and wood trim, replaces the gallery-6 stock leather seat.
+  { file: "gallery-6.jpg", id: "IMG_8566.jpg", size: SQUARE_PHONE, real: true },
   { file: "gallery-7.jpg", id: 28571826, size: SQUARE },
   { file: "gallery-8.jpg", id: 8237050, size: WIDE },
+
+  // Gallery: job 2, a 2003 Mercedes S-Class, full interior detail and an
+  // exterior wash documented start to finish (foam through to clean).
+  { file: "job2-foam.jpg", id: "IMG_8572.jpg", size: WIDE_PHONE, real: true },
+  { file: "job2-clean.jpg", id: "IMG_8583.jpg", size: WIDE_PHONE, real: true },
+  { file: "job2-interior-1.jpg", id: "IMG_8567.jpg", size: SQUARE_PHONE, real: true },
+  { file: "job2-interior-2.jpg", id: "IMG_8562.jpg", size: SQUARE_PHONE, real: true },
+
+  // Gallery: job 3, a Ford Expedition Limited. Interior and, this time,
+  // the finished exterior too.
+  { file: "job3-dash.jpg", id: "11278.jpg", size: CARD_PHONE, real: true },
+  { file: "job3-wheel.jpg", id: "11287.jpg", size: SQUARE_PHONE, real: true },
+  { file: "job3-seats.jpg", id: "11302.jpg", size: SQUARE_PHONE, real: true },
+  { file: "job3-exterior-front.jpg", id: "11304.jpg", size: WIDE_PHONE, real: true },
+  { file: "job3-exterior-rear.jpg", id: "11328.jpg", size: WIDE_PHONE, real: true },
 ];
 
 mkdirSync(outDir, { recursive: true });

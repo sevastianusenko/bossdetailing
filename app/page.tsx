@@ -28,7 +28,7 @@ const galleryShots = [
   { src: "/images/gallery-3.jpg", alt: "Cleaned dashboard, vents and passenger seat of a Ford Explorer" },
   { src: "/images/gallery-4.jpg", alt: "Cleaned steering wheel and instrument cluster of a Ford Explorer" },
   { src: "/images/gallery-5.jpg", alt: "Water standing in tight beads on a glossy panel" },
-  { src: "/images/gallery-6.jpg", alt: "Light leather seat and console cleaned to a matte finish" },
+  { src: "/images/gallery-6.jpg", alt: "Wood trim and leather dashboard of a Mercedes S-Class after detailing" },
 ];
 
 const whatWeNeed = [

@@ -7,6 +7,16 @@ REAL: the client's own job photography. Keep.
   gallery-2.jpg  <- 4956687487505992956.jpg
   gallery-3.jpg  <- 4956687487505992973.jpg
   gallery-4.jpg  <- 4956687487505992981.jpg
+  gallery-6.jpg  <- IMG_8566.jpg
+  job2-foam.jpg  <- IMG_8572.jpg
+  job2-clean.jpg  <- IMG_8583.jpg
+  job2-interior-1.jpg  <- IMG_8567.jpg
+  job2-interior-2.jpg  <- IMG_8562.jpg
+  job3-dash.jpg  <- 11278.jpg
+  job3-wheel.jpg  <- 11287.jpg
+  job3-seats.jpg  <- 11302.jpg
+  job3-exterior-front.jpg  <- 11304.jpg
+  job3-exterior-rear.jpg  <- 11328.jpg
 
 REFERENCE: licensed Pexels frames, free to use, attribution not required.
 Replace these with the client's own work as it is documented.
@@ -26,6 +36,5 @@ Replace these with the client's own work as it is documented.
   area-portland.jpg  https://www.pexels.com/photo/19665312/
   area-suburb.jpg  https://www.pexels.com/photo/5353883/
   gallery-5.jpg  https://www.pexels.com/photo/248395/
-  gallery-6.jpg  https://www.pexels.com/photo/12190248/
   gallery-7.jpg  https://www.pexels.com/photo/28571826/
   gallery-8.jpg  https://www.pexels.com/photo/8237050/
