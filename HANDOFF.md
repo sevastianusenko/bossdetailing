@@ -30,9 +30,11 @@ claim Boss Auto Detailing has made publicly beyond what is flagged here.
 
 ## 4. The blog
 
-Eleven posts live in `content/posts/` as typed data across three files (`pricing.ts`, `paint.ts`, `care.ts`), surfaced at `/blog`. They carry BlogPosting and FAQPage schema, sitemap entries, and internal links into the matching service and city pages.
+Twenty-one posts live in `content/posts/` as typed data across four files (`pricing.ts`, `paint.ts`, `care.ts`, `fleet.ts`), surfaced at `/blog`. They carry BlogPosting and FAQPage schema, sitemap entries, and internal links into the matching service and city pages. Each runs 1500+ words of genuine body content, no filler.
 
-Six posts that were specifically about paint correction, ceramic coating or headlight restoration were removed on 2026-09-25 along with those services. Two paint-care posts (tree sap, water spots) were kept and edited to stop implying we perform correction ourselves. Two new posts were added: one on furniture cleaning pricing, one comparing indoor and outdoor furniture cleaning. Adding a post is one object in one of the three files; nothing in them invents a statistic, a study, a customer or a review.
+Six posts that were specifically about paint correction, ceramic coating or headlight restoration were removed on 2026-09-25 along with those services. Two paint-care posts (tree sap, water spots) were kept and edited to stop implying we perform correction ourselves. Two new posts were added at the time: one on furniture cleaning pricing, one comparing indoor and outdoor furniture cleaning.
+
+Ten more posts were added later the same day, adding a new **Fleet** category (`fleet.ts`) alongside the existing Pricing, Paint, Interior, Seasonal, Practical and Furniture ones: flat-pricing rationale, bird droppings, coffee/drink stains, leather care, pet stains and odor in a mattress, mildew on patio furniture, what a detailing appointment actually looks like, getting ready for a Pacific Northwest fall, and two fleet-specific posts on cleaning schedules and on-site requirements. Adding a post is one object in one of the four files; nothing in them invents a statistic, a study, a customer, a review, or a business process we do not actually follow.
 
 ## 5. Not built, by agreement
 
@@ -59,7 +61,7 @@ lib/packages.ts    real car pricing by vehicle class + bundle discount
 lib/promo.ts       the running offer, its terms and its end date
 lib/faq.ts         10 questions (also feeds FAQPage schema)
 lib/posts.ts       blog index, reading time, related posts
-content/posts/     the 11 posts, three files by theme
+content/posts/     the 21 posts, four files by theme (pricing, paint, care, fleet)
 public/brand/      logo derivatives generated from the client PNG
 lib/process.ts     the 6 booking stages
 components/JsonLd.tsx   LocalBusiness, Service, Breadcrumb, FAQPage schema

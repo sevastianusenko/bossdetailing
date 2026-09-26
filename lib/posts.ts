@@ -2,11 +2,12 @@ import type { Post } from "./post-types";
 import { pricingPosts } from "@/content/posts/pricing";
 import { paintPosts } from "@/content/posts/paint";
 import { carePosts } from "@/content/posts/care";
+import { fleetPosts } from "@/content/posts/fleet";
 
 export type { Post, PostSection } from "./post-types";
 
 /** Newest first. Ties keep the order the content files declare. */
-export const posts: Post[] = [...pricingPosts, ...paintPosts, ...carePosts].sort(
+export const posts: Post[] = [...pricingPosts, ...paintPosts, ...carePosts, ...fleetPosts].sort(
   (a, b) => b.published.localeCompare(a.published),
 );
 

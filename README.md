@@ -30,7 +30,7 @@ comments where they apply.
 | `/services` + `/services/[slug]` | 4 service pages (interior, exterior, furniture & upholstery, fleet), `Service` schema each |
 | `/service-areas` + `/service-areas/[slug]` | 7 city pages with genuinely local copy |
 | `/packages` | Real interior/exterior pricing by vehicle class, plus a furniture-cleaning quote note |
-| `/blog` + `/blog/[slug]` | 11 posts, `BlogPosting` and `FAQPage` schema |
+| `/blog` + `/blog/[slug]` | 21 posts, `BlogPosting` and `FAQPage` schema |
 | `/gallery` `/about` `/faq` `/contact` | |
 | `/api/request` | Form handler; accepts JSON or multipart (with photo attachments), posts to Resend when configured |
 
