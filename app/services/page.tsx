@@ -10,7 +10,7 @@ import { JsonLd, breadcrumbSchema } from "@/components/JsonLd";
 export const metadata: Metadata = {
   title: "Mobile Detailing Services in Vancouver WA & Portland OR",
   description:
-    "Interior extraction, hand wash and decontamination, paint correction, ceramic coating, headlight restoration, pre-sale prep and fleet service, all performed at your address.",
+    "Interior detailing, exterior hand washing, furniture and upholstery cleaning, and fleet service, all performed at your address.",
   alternates: { canonical: "/services" },
 };
 
@@ -26,10 +26,10 @@ export default function ServicesPage() {
 
       <PageHero
         mark="Services"
-        title="Everything a fixed shop does, at your address."
-        lede="Seven services, from a recurring maintenance visit to multi-stage correction and ceramic coating. Each one is priced by vehicle size and condition, and each one is quoted before we start."
+        title="Four kinds of work, at your address."
+        lede="Interior, exterior, furniture and fleet. Each one is priced plainly, and each one is quoted before we start. Send photos with your request for the most accurate number."
         image="/images/services-hero.jpg"
-        imageAlt="Machine polisher and a reflective panel during correction work"
+        imageAlt="Hand rinsing foam off a dark sedan in a residential driveway"
         crumbs={[{ label: "Home", href: "/" }]}
       />
 

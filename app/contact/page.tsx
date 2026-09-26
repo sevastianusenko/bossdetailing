@@ -9,7 +9,7 @@ import { JsonLd, breadcrumbSchema } from "@/components/JsonLd";
 export const metadata: Metadata = {
   title: "Contact Us to Book Mobile Detailing in Vancouver WA & Portland OR",
   description:
-    "Call (509) 224-8299 or send a request. Tell us the vehicle, the city and where it will be parked, and we come back with a scope, a price and a window.",
+    "Call (509) 224-8299 or send a request with photos. Tell us the vehicle, the city and whether you have water and power access, and we come back with a price and a window.",
   alternates: { canonical: "/contact" },
 };
 
@@ -25,8 +25,8 @@ export default function ContactPage() {
 
       <PageHero
         mark="Contact"
-        title="Tell us the car and where it sleeps."
-        lede="The two things that decide a quote are the vehicle and the space it will be parked in. Give us both and the number we come back with will be the number you pay."
+        title="Send photos and tell us the space."
+        lede="Two things decide the quote: what the vehicle or furniture needs, and whether the address has an outdoor water spigot and a power outlet. Give us both, with a couple of photos, and the number we come back with is the number you pay."
         image="/images/contact-hero.jpg"
         imageAlt="Full-size SUV parked in front of a home garage"
         crumbs={[{ label: "Home", href: "/" }]}

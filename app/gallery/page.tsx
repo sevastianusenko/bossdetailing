@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
-import { BeforeAfter } from "@/components/BeforeAfter";
 import { CtaBand } from "@/components/CtaBand";
 import { JsonLd, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "The Work: Mobile Detailing Gallery",
   description:
-    "Interior extraction, decontamination, machine correction and ceramic coating. What each stage actually changes, close enough to see.",
+    "Interior extraction, hand washing and furniture cleaning. What each stage actually changes, close enough to see.",
   alternates: { canonical: "/gallery" },
 };
 
@@ -42,7 +41,7 @@ const shots = [
   {
     src: "/images/gallery-5.jpg",
     alt: "Water standing in tight beads on a glossy painted surface",
-    caption: "Protected paint holding water in tight beads",
+    caption: "A sealed finish holding water in tight beads",
   },
   {
     src: "/images/gallery-6.jpg",
@@ -54,14 +53,14 @@ const shots = [
 /** The wide pair that closes the page. Same provenance as the grid above. */
 const closers = [
   {
-    src: "/images/gallery-7.jpg",
-    alt: "Machine polisher working along the edge of a painted panel",
-    caption: "Machine correction, panel by panel",
+    src: "/images/furniture-cleaning.jpg",
+    alt: "Upholstered sofa cushion being cleaned with a fabric extraction tool",
+    caption: "Furniture and upholstery cleaning, indoors and out",
   },
   {
     src: "/images/gallery-8.jpg",
     alt: "Engine bay cleaned and conservatively dressed",
-    caption: "Engine bay cleaned and dressed conservatively",
+    caption: "A full exterior detail, done properly",
   },
 ];
 
@@ -78,46 +77,13 @@ export default function GalleryPage() {
       <PageHero
         mark="The work"
         title="Close enough to see what changed."
-        lede="Detailing photographs badly from ten feet away. These are the details that decide whether a car reads as clean or as finished."
+        lede="Detailing photographs badly from ten feet away. These are the details that decide whether a car or a room reads as clean or as finished."
         image="/images/gallery-hero.jpg"
         imageAlt="A dark car under snow foam, panels covered in suds"
         crumbs={[{ label: "Home", href: "/" }]}
       />
 
       <section className="border-t border-line py-16 md:py-24">
-        <div className="wrap grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-7">
-            <BeforeAfter
-              before="/images/correction-before.jpg"
-              after="/images/correction-after.jpg"
-              beforeAlt="Glossy dark paint overlaid with a dense web of fine circular scratches"
-              afterAlt="The same frame with the marring removed, reflecting cleanly"
-              beforeLabel="Marred"
-              afterLabel="Corrected"
-              note="Illustration. One photograph, shown with and without simulated clear-coat marring."
-            />
-          </div>
-          <div className="lg:col-span-5">
-            <p className="mark">Multi-stage correction</p>
-            <h2 className="rank-section mt-5 text-bone">
-              What marring actually does to a reflection.
-            </h2>
-            <p className="prose-body mt-6">
-              This is one photograph with the damage drawn on, so you can see
-              the mechanism rather than a lighting change: thousands of fine
-              circular scratches scatter a single light source into a haze.
-              Correction removes them by taking a few microns of clear coat
-              down to their depth. Nothing is added and nothing is filled.
-            </p>
-            <p className="mt-4 text-sm text-muted">
-              An illustration, not a customer&rsquo;s car. Real before-and-after
-              sets are added here as jobs are documented.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t border-line bg-ink-2 py-16 md:py-24">
         <div className="wrap">
           <div className="grid grid-cols-2 gap-px bg-line md:grid-cols-3">
             {shots.map((s) => (
@@ -169,8 +135,8 @@ export default function GalleryPage() {
       </section>
 
       <CtaBand
-        title="Want your car in here?"
-        body="Send the vehicle and the city. We will tell you what it needs, what it will cost, and how long we will have it."
+        title="Want your car or your furniture in here?"
+        body="Send photos and the address. We will tell you what it needs, what it will cost, and how long we will have it."
       />
     </>
   );

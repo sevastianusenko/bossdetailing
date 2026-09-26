@@ -11,22 +11,22 @@ import { JsonLd, breadcrumbSchema } from "@/components/JsonLd";
 export const metadata: Metadata = {
   title: "About Boss Auto Detailing in Vancouver, WA",
   description:
-    "How a self-contained mobile detailing operation actually works, what we refuse to do, and why the process runs in the order it does. Based in Vancouver, WA.",
+    "How our mobile detailing and furniture cleaning operation actually works, what we ask from you, and why the process runs in the order it does.",
   alternates: { canonical: "/about" },
 };
 
 const refusals = [
   {
     t: "We do not use a drive-through brush or a dirty mitt",
-    d: "Most of the fine scratching in clear coat is put there by washing. A foam dwell, filtered water, grit guards and fresh media per panel section exist for one reason: to avoid adding damage while removing dirt.",
+    d: "Most of the fine scratching in clear coat is put there by washing. A foam dwell, grit guards and fresh media per panel section exist for one reason: to avoid adding damage while removing dirt.",
   },
   {
-    t: "We do not fill defects and call it correction",
-    d: "Glaze and filler-heavy polish hide swirls for about six weeks. Correction means abrading the clear coat to the level of the defect. If the paint is too thin to take it, we say so and stop.",
+    t: "We do not quote a price without knowing the condition",
+    d: "Heavy pet hair, a set-in spill or a car that has not been cleaned in a year all add real time. A firm price with no questions asked is a guess, and we would rather ask for photos than guess.",
   },
   {
-    t: "We do not coat uncorrected paint without telling you",
-    d: "A ceramic coating is optically clear and semi-permanent. Putting one over swirl marks means paying to preserve them for years. If you want a coating, we will quote the correction it needs first.",
+    t: "We do not book a job without confirming water and power",
+    d: "We need an outdoor spigot and an electrical outlet at the address. We check that with you before the appointment, not after we arrive and cannot set up.",
   },
   {
     t: "We do not mask an odor we have not found",
@@ -46,7 +46,7 @@ export default function AboutPage() {
 
       <PageHero
         mark="About"
-        title="A shop-grade process, taken to the car."
+        title="A real process, taken to the car."
         lede="Boss Auto Detailing is a mobile operation based on NE 57th Avenue in Vancouver, Washington, working both sides of the Columbia. Everything below is how the work is actually done."
         image="/images/about-hero.jpg"
         imageAlt="Machine polishing a car door during a professional detail"
@@ -64,19 +64,21 @@ export default function AboutPage() {
               <p className="prose-body">
                 Traditional detailing is limited by a building. You drive to
                 it, you leave the car, you arrange another way home, and you
-                come back when someone calls. For a multi-day correction and
-                coating job, that is a genuine disruption to a week.
+                come back when someone calls. For anything that takes more
+                than an hour, that is a real disruption to your week.
               </p>
               <p className="prose-body">
-                A properly equipped mobile rig removes that constraint without
-                giving anything up. Our own filtered water and pressure system,
-                our own power, hot-water extraction, steam, controlled
-                inspection lighting and a full polishing setup all travel with
-                us. Nothing connects to your house. Nothing needs your outlet.
+                We do not carry a water tank or a generator. What we carry is
+                the equipment that actually does the work: commercial
+                vacuums, a hot-water extractor, brushes and professional
+                products, for cars and furniture alike. In exchange we ask
+                for two things most homes and businesses already have: an
+                outdoor water spigot and an electrical outlet.
               </p>
               <p className="prose-body">
                 What that buys you is ordinary and valuable: the work happens
-                where the car already is, while you get on with your day.
+                where the vehicle or the furniture already is, while you get
+                on with your day.
               </p>
             </div>
           </div>
@@ -104,8 +106,8 @@ export default function AboutPage() {
             </h2>
             <p className="prose-body mt-6">
               A standard is most legible in what it rules out. These are the
-              shortcuts that make a car look excellent for a month and worse
-              afterwards.
+              shortcuts that make a job look fine on the day and cause a
+              problem afterward.
             </p>
           </div>
 
@@ -183,10 +185,9 @@ export default function AboutPage() {
 
           <div className="flex flex-col justify-end">
             <p className="prose-body">
-              If you want to know whether a specific job is workable at your
-              address, whether that is a tight condo garage, a steep West Linn
-              driveway or an office lot with a supervisor to clear, the fastest
-              answer is a phone call.
+              If you want to know whether your address has what we need,
+              whether that is a condo without an outdoor tap or an office lot
+              with a supervisor to clear, the fastest answer is a phone call.
             </p>
             <Link href="/contact" className="btn mt-7 self-start">
               Get in touch

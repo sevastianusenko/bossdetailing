@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { areas, areaBySlug } from "@/lib/areas";
 import { services } from "@/lib/services";
-import { packages, formatUsd } from "@/lib/packages";
+import { vehicleClasses, formatUsd } from "@/lib/packages";
 import { site } from "@/lib/site";
 import { PageHero } from "@/components/PageHero";
 import { RequestForm } from "@/components/RequestForm";
@@ -158,22 +158,24 @@ export default async function AreaPage({ params }: Props) {
           </div>
 
           <div className="mt-10 grid gap-px bg-line sm:grid-cols-3">
-            {packages.map((p) => (
-              <div key={p.slug} className="bg-ink-2 p-6">
+            {vehicleClasses.map((vc) => (
+              <div key={vc.slug} className="bg-ink-2 p-6">
                 <p className="font-display text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-muted">
-                  {p.name}
+                  {vc.label}
                 </p>
                 <p className="mt-2 font-display text-3xl font-bold text-bone">
-                  From {formatUsd(p.fromPrice)}
+                  {formatUsd(vc.bundleTotal)}
                 </p>
-                <p className="mt-1 text-sm text-silver">{p.duration}</p>
+                <p className="mt-1 text-sm text-silver">
+                  Interior &amp; exterior together
+                </p>
               </div>
             ))}
           </div>
           <p className="mt-4 text-sm text-muted">
-            Starting prices for a coupe or sedan.{" "}
+            Real prices, by vehicle size.{" "}
             <Link href="/packages" className="link-inline">
-              See what moves the number
+              See the full breakdown
             </Link>
             .
           </p>

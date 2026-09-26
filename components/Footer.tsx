@@ -16,8 +16,9 @@ export function Footer() {
           <div className="md:col-span-4">
             <Wordmark size="footer" />
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-silver">
-              Self-contained mobile detailing for both sides of the Columbia.
-              We bring the shop to your driveway, your office lot or your yard.
+              Mobile car detailing and furniture cleaning for both sides of
+              the Columbia. We bring the equipment to your driveway, your
+              office lot or your yard.
             </p>
 
             <address className="mt-7 not-italic">

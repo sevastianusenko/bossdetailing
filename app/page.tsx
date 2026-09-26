@@ -4,11 +4,10 @@ import type { Metadata } from "next";
 import { site } from "@/lib/site";
 import { homePillars } from "@/lib/services";
 import { areas } from "@/lib/areas";
-import { packages, sizeTiers, formatUsd } from "@/lib/packages";
+import { vehicleClasses, bundleSavings, formatUsd } from "@/lib/packages";
 import { processSteps } from "@/lib/process";
 import { faqs } from "@/lib/faq";
 import { Arrow, PhoneGlyph } from "@/components/Arrow";
-import { BeforeAfter } from "@/components/BeforeAfter";
 import { FaqList } from "@/components/FaqList";
 import { RequestForm } from "@/components/RequestForm";
 import { JsonLd, faqSchema } from "@/components/JsonLd";
@@ -18,9 +17,9 @@ export const metadata: Metadata = {
 };
 
 const heroFacts = [
-  { k: "Own water & power", v: "Nothing plugs into your house" },
+  { k: "You provide water & power", v: "An outdoor spigot and a nearby outlet" },
   { k: "Two states", v: "Clark, Multnomah, Washington, Clackamas" },
-  { k: "Shop-grade", v: "Correction and coating, done on site" },
+  { k: "Send photos first", v: "Faster, more accurate quotes" },
 ];
 
 const galleryShots = [
@@ -30,6 +29,25 @@ const galleryShots = [
   { src: "/images/gallery-4.jpg", alt: "Cleaned steering wheel and instrument cluster of a Ford Explorer" },
   { src: "/images/gallery-5.jpg", alt: "Water standing in tight beads on a glossy panel" },
   { src: "/images/gallery-6.jpg", alt: "Light leather seat and console cleaned to a matte finish" },
+];
+
+const whatWeNeed = [
+  {
+    t: "You provide the hookup",
+    d: "An outdoor water spigot and a nearby electrical outlet. Most houses and businesses already have both, right where you would park.",
+  },
+  {
+    t: "We bring the equipment",
+    d: "Commercial vacuums, a hot-water extractor, brushes, buckets and professional products for cars and furniture alike.",
+  },
+  {
+    t: "Photos speed up the quote",
+    d: "A couple of photos and a detailed message about the condition means an accurate price before we ever arrive.",
+  },
+  {
+    t: "We work where you are",
+    d: "Driveway, office lot or commercial yard, as long as there is a spigot and an outlet somewhere on the property.",
+  },
 ];
 
 export default function HomePage() {
@@ -62,9 +80,10 @@ export default function HomePage() {
           </h1>
 
           <p className="lede mt-6">
-            We arrive fully self-contained, carrying our own water, power,
-            extraction and polishing gear, and do shop-grade work at your home,
-            your office lot or your yard. Both sides of the Columbia.
+            We bring vacuums, extraction equipment and professional products
+            for cars and furniture alike, and do the work at your home, your
+            office lot or your yard. All we ask is access to an outdoor water
+            spigot and a power outlet. Both sides of the Columbia.
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -96,7 +115,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── What arrives ─────────────────────────────────────────────── */}
+      {/* ── What we need / what we bring ─────────────────────────────── */}
       <section className="border-t border-line py-20 md:py-28">
         <div className="wrap grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
@@ -105,16 +124,16 @@ export default function HomePage() {
               A bay on wheels, not a bucket in a trunk.
             </h2>
             <p className="prose-body mt-6">
-              &ldquo;Mobile&rdquo; covers two completely different businesses.
-              One is a person with a pressure washer who needs your spigot and
-              your outlet. The other is a self-contained rig carrying its own
-              filtered water, its own power, hot-water extraction, controlled
-              lighting and a full polishing setup.
+              &ldquo;Mobile&rdquo; can mean a guy with a bucket and a garden
+              hose, or it can mean real equipment: commercial vacuums, a
+              hot-water extractor, and products that actually lift a stain
+              instead of smearing it around.
             </p>
             <p className="prose-body mt-4">
-              We are the second one. Paint correction and ceramic coating
-              normally mean leaving your car at a shop for three days. Here it
-              happens in your own garage while you carry on with your week.
+              We are the second one. What we ask in return is simple: an
+              outdoor water spigot and a power outlet at the address. That is
+              the whole setup, and it is what keeps our prices lower than a
+              rig that hauls its own water tank and generator to every job.
             </p>
             <Link href="/about" className="link-more mt-8 inline-flex">
               How we work
@@ -134,24 +153,7 @@ export default function HomePage() {
             </div>
 
             <dl className="mt-8 grid gap-x-10 sm:grid-cols-2">
-              {[
-                {
-                  t: "Filtered water on board",
-                  d: "Tank, pump and filtration travel with us, so panels dry without mineral spotting even where the tap water is hard.",
-                },
-                {
-                  t: "Independent power",
-                  d: "Extraction, steam, lighting and polishers all run off our own supply. No cords through your window.",
-                },
-                {
-                  t: "Controlled inspection light",
-                  d: "Defects that hide under daylight show under raking light. You cannot correct what you cannot see.",
-                },
-                {
-                  t: "We work where you are",
-                  d: "Driveway, office lot, apartment garage, commercial yard. If there is room to open the doors, we can work.",
-                },
-              ].map((item) => (
+              {whatWeNeed.map((item) => (
                 <div key={item.t} className="border-t border-line py-5">
                   <dt className="rank-sub text-bone">{item.t}</dt>
                   <dd className="mt-2 text-sm leading-relaxed text-silver">
@@ -213,7 +215,7 @@ export default function HomePage() {
                     </h3>
                     <p className="mt-3 max-w-[62ch] text-silver">{s.summary}</p>
                     <span className="link-more mt-5 inline-flex">
-                      Read the process
+                      Read the details
                       <Arrow />
                     </span>
                   </div>
@@ -224,190 +226,98 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Proof: correction ────────────────────────────────────────── */}
-      <section className="border-t border-line py-20 md:py-28">
-        <div className="wrap grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-7">
-            <BeforeAfter
-              before="/images/correction-before.jpg"
-              after="/images/correction-after.jpg"
-              beforeAlt="Glossy dark paint overlaid with a dense web of fine circular scratches"
-              afterAlt="The same frame with the marring removed, reflecting cleanly"
-              beforeLabel="Marred"
-              afterLabel="Corrected"
-              note="Illustration. One photograph, shown with and without simulated clear-coat marring."
-            />
-          </div>
-
-          <div className="lg:col-span-5">
-            <p className="mark">Paint correction</p>
-            <h2 className="rank-section mt-5 text-bone">
-              That haze is not the color. It is damage.
-            </h2>
-            <p className="prose-body mt-6">
-              The reason a black car rarely looks black is a web of fine
-              circular scratches in the clear coat, put there by washing rather
-              than by the road. Under a single light source they scatter the
-              reflection and turn depth into gray.
-            </p>
-            <p className="prose-body mt-4">
-              Correction removes them from the clear coat rather than filling
-              them with something that washes out in six weeks. We measure
-              paint thickness first, agree a test spot with you, and tell you
-              honestly what will not come out.
-            </p>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <Link href="/services/paint-correction" className="btn">
-                Paint correction
-                <Arrow />
-              </Link>
-              <Link
-                href="/services/paint-correction#anatomy"
-                className="link-more"
-              >
-                What two days look like
-                <Arrow />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Packages ─────────────────────────────────────────────────── */}
+      {/* ── Pricing ──────────────────────────────────────────────────── */}
       <section
         id="packages"
-        className="border-t border-line bg-ink-2 py-20 md:py-28"
+        className="border-t border-line py-20 md:py-28"
       >
         <div className="wrap">
           <div className="max-w-2xl">
-            <p className="mark">Packages</p>
+            <p className="mark">Pricing</p>
             <h2 className="rank-section mt-5 text-bone">
-              Three levels. Priced by what the car actually needs.
+              Priced by vehicle. No tiers to decode.
             </h2>
             <p className="prose-body mt-6">
-              Starting prices are for a coupe or sedan in reasonable condition.
-              Size and condition move the number, so every job gets a real
-              quote before we start. No surprises at handover.
+              Interior and exterior are priced separately, with a flat
+              discount when you book both on the same visit. These are our
+              real prices, not a starting point that grows once we arrive.
             </p>
           </div>
 
           <div className="mt-14 grid gap-px bg-line lg:grid-cols-3">
-            {packages.map((p) => (
-              <div
-                key={p.slug}
-                className={`flex flex-col p-8 md:p-10 ${
-                  p.featured ? "bg-chalk text-ink" : "bg-ink-2"
-                }`}
+            {vehicleClasses.map((vc) => (
+              <div key={vc.slug} className="bg-ink-2 p-8 md:p-10">
+                <h3
+                  className="font-display text-2xl font-bold text-bone"
+                  style={{ fontStretch: "94%", letterSpacing: "-0.03em" }}
+                >
+                  {vc.label}
+                </h3>
+                <p className="mt-2 text-sm text-muted">{vc.examples}</p>
+
+                <dl className="mt-8">
+                  <div className="spec">
+                    <dt>Interior</dt>
+                    <dd>{formatUsd(vc.interior)}</dd>
+                  </div>
+                  <div className="spec">
+                    <dt>Exterior</dt>
+                    <dd>{formatUsd(vc.exterior)}</dd>
+                  </div>
+                  <div className="spec">
+                    <dt>Both together</dt>
+                    <dd className="font-semibold text-carmine-lt">
+                      {formatUsd(vc.bundleTotal)}{" "}
+                      <span className="font-normal text-muted">
+                        (save {formatUsd(bundleSavings(vc))})
+                      </span>
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 flex flex-col gap-6 bg-chalk p-8 md:flex-row md:items-center md:justify-between md:gap-10 md:p-10">
+            <div>
+              <span className="bg-carmine px-2 py-1 font-display text-[0.6rem] font-semibold uppercase tracking-[0.18em] text-bone">
+                Do this first
+              </span>
+              <h3
+                className="mt-4 font-display text-2xl font-bold text-ink"
+                style={{ fontStretch: "94%", letterSpacing: "-0.03em" }}
               >
-                <div className="flex items-baseline justify-between gap-4">
-                  <h3
-                    className={`font-display text-2xl font-bold ${
-                      p.featured ? "text-ink" : "text-bone"
-                    }`}
-                    style={{ fontStretch: "94%", letterSpacing: "-0.03em" }}
-                  >
-                    {p.name}
-                  </h3>
-                  {p.featured && (
-                    <span className="bg-carmine px-2 py-1 font-display text-[0.6rem] font-semibold uppercase tracking-[0.18em] text-bone">
-                      Most booked
-                    </span>
-                  )}
-                </div>
-
-                <p
-                  className={`mt-3 text-sm leading-relaxed ${
-                    p.featured ? "text-ink/70" : "text-silver"
-                  }`}
-                >
-                  {p.positioning}
-                </p>
-
-                <p className="mt-7 flex items-baseline gap-2">
-                  <span
-                    className={`font-display text-[0.65rem] font-semibold uppercase tracking-[0.18em] ${
-                      p.featured ? "text-ink/55" : "text-muted"
-                    }`}
-                  >
-                    From
-                  </span>
-                  <span
-                    className={`font-display text-5xl font-bold ${
-                      p.featured ? "text-ink" : "text-bone"
-                    }`}
-                    style={{ fontStretch: "92%", letterSpacing: "-0.04em" }}
-                  >
-                    {formatUsd(p.fromPrice)}
-                  </span>
-                </p>
-                <p
-                  className={`mt-1.5 text-sm ${
-                    p.featured ? "text-ink/60" : "text-muted"
-                  }`}
-                >
-                  {p.duration} · coupe &amp; sedan
-                </p>
-
-                <p
-                  className={`mt-6 border-t pt-6 text-sm leading-relaxed ${
-                    p.featured
-                      ? "border-ink/15 text-ink/75"
-                      : "border-line text-silver"
-                  }`}
-                >
-                  {p.summary}
-                </p>
-
-                <ul className="mt-6 flex-1 space-y-2.5">
-                  {p.includes.slice(0, 6).map((inc) => (
-                    <li
-                      key={inc}
-                      className={`flex gap-3 text-sm leading-relaxed ${
-                        p.featured ? "text-ink/80" : "text-silver"
-                      }`}
-                    >
-                      <span
-                        aria-hidden="true"
-                        className={`mt-2 block h-px w-3 shrink-0 ${
-                          p.featured ? "bg-carmine" : "bg-carmine-lt"
-                        }`}
-                      />
-                      {inc}
-                    </li>
-                  ))}
-                </ul>
-
-                <Link
-                  href="/packages"
-                  className={`btn mt-8 ${p.featured ? "" : "btn-ghost"}`}
-                >
-                  Full breakdown
-                  <Arrow />
-                </Link>
-              </div>
-            ))}
+                Send photos and a detailed message.
+              </h3>
+              <p className="mt-3 max-w-[58ch] text-sm leading-relaxed text-ink/75">
+                Condition changes the job more than size does. A couple of
+                photos and a few sentences about pet hair, stains, or how long
+                it has been since the last clean means the number we give you
+                is the number you pay.
+              </p>
+            </div>
+            <Link href="/contact" className="btn shrink-0">
+              Send photos &amp; get a quote
+              <Arrow />
+            </Link>
           </div>
 
-          <div className="mt-10 grid gap-px bg-line sm:grid-cols-3">
-            {sizeTiers.map((t) => (
-              <div key={t.label} className="bg-ink-2 p-6">
-                <p className="font-display text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-muted">
-                  {t.surcharge === 0
-                    ? "Base rate"
-                    : `+ ${formatUsd(t.surcharge)}`}
-                </p>
-                <p className="mt-2 font-display text-lg font-semibold text-bone">
-                  {t.label}
-                </p>
-                <p className="mt-1 text-sm text-silver">{t.examples}</p>
-              </div>
-            ))}
-          </div>
+          <p className="mt-8 max-w-[70ch] text-sm text-muted">
+            Furniture and upholstery cleaning is priced by piece and
+            condition, not by vehicle class. See{" "}
+            <Link
+              href="/services/furniture-upholstery-cleaning"
+              className="link-inline"
+            >
+              furniture &amp; upholstery cleaning
+            </Link>{" "}
+            or call for a quote.
+          </p>
         </div>
       </section>
 
       {/* ── Process ──────────────────────────────────────────────────── */}
-      <section className="border-t border-line py-20 md:py-28">
+      <section className="border-t border-line bg-ink-2 py-20 md:py-28">
         <div className="wrap">
           <div className="max-w-2xl">
             <p className="mark">How a booking runs</p>
@@ -564,7 +474,7 @@ export default function HomePage() {
           <div className="lg:col-span-5">
             <p className="mark">Book it</p>
             <h2 className="rank-section mt-5 text-bone">
-              Tell us the car and where it sleeps.
+              Tell us the vehicle and send a few photos.
             </h2>
             <p className="prose-body mt-6">
               The more you tell us up front, the more accurate the quote and

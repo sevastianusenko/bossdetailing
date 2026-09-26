@@ -8,7 +8,7 @@ import { JsonLd, breadcrumbSchema, faqSchema } from "@/components/JsonLd";
 export const metadata: Metadata = {
   title: "Mobile Detailing FAQ for Vancouver WA & Portland OR",
   description:
-    "Do you bring your own water? Do you work in the rain? Do I need correction before a coating? Straight answers about mobile detailing in the Portland metro.",
+    "Do I need to provide water and power? Do you work in the rain? Do you clean furniture too? Straight answers about mobile detailing in the Portland metro.",
   alternates: { canonical: "/faq" },
 };
 

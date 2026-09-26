@@ -27,7 +27,7 @@ export default function ServiceAreasPage() {
       <PageHero
         mark="Service area"
         title="We cross the bridge most days."
-        lede="Clark County is home. Multnomah, Washington and Clackamas are the rest of the week. Every city below gets the same fully self-contained setup, and nothing plugs into your house."
+        lede="Clark County is home. Multnomah, Washington and Clackamas are the rest of the week. Every city below gets the same setup: we bring the equipment, you provide a water spigot and an outlet."
         image="/images/area.jpg"
         imageAlt="A steel bridge spanning the river between the two cities we work in"
         crumbs={[{ label: "Home", href: "/" }]}
@@ -81,9 +81,9 @@ export default function ServiceAreasPage() {
             <a href={site.phone.href} className="link-inline">
               {site.phone.display}
             </a>{" "}
-            and ask. It is often still workable, particularly for correction
-            and coating jobs where we are on site for more than a day anyway.
-            Counties covered: {site.counties.join(", ")}.
+            and ask. It is often still workable, especially if your address
+            has an outdoor spigot and a power outlet we can use. Counties
+            covered: {site.counties.join(", ")}.
           </p>
         </div>
       </section>

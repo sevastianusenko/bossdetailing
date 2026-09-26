@@ -17,7 +17,7 @@ export type Post = {
   description: string;
   /** ISO date. */
   published: string;
-  category: "Pricing" | "Paint" | "Interior" | "Seasonal" | "Practical";
+  category: "Pricing" | "Paint" | "Interior" | "Seasonal" | "Practical" | "Furniture";
   excerpt: string;
   hero: string;
   heroAlt: string;

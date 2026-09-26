@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { packages, sizeTiers, formatUsd } from "@/lib/packages";
+import { vehicleClasses, bundleSavings, formatUsd } from "@/lib/packages";
 import { promo, promoEndsLabel, promoIsLive } from "@/lib/promo";
 import { site } from "@/lib/site";
 import { PageHero } from "@/components/PageHero";
@@ -9,9 +9,9 @@ import { Arrow } from "@/components/Arrow";
 import { JsonLd, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Packages & Pricing for Mobile Detailing in Vancouver WA & Portland OR",
+  title: "Pricing for Mobile Car Detailing in Vancouver WA & Portland OR",
   description:
-    "Three levels of mobile detailing: Maintenance, Signature Detail, and Correction & Coating. Starting prices, what is included, and what moves the number.",
+    "Real prices for interior and exterior car detailing by vehicle size, plus furniture and upholstery cleaning quoted by piece. No tiers to decode.",
   alternates: { canonical: "/packages" },
 };
 
@@ -21,14 +21,14 @@ export default function PackagesPage() {
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", url: "/" },
-          { name: "Packages", url: "/packages" },
+          { name: "Pricing", url: "/packages" },
         ])}
       />
 
       <PageHero
-        mark="Packages"
-        title="What it costs, and what moves the number."
-        lede="Three levels, each a superset of the one before it. Starting prices are for a coupe or sedan in reasonable condition. Size and condition are the two things that change them."
+        mark="Pricing"
+        title="Priced by vehicle. No tiers to decode."
+        lede="Interior and exterior are priced separately by vehicle size, with a flat discount when you book both on the same visit. These are our real prices."
         image="/images/packages-hero.jpg"
         imageAlt="Microfiber towel drawn across a dark, polished panel"
         crumbs={[{ label: "Home", href: "/" }]}
@@ -49,8 +49,8 @@ export default function PackagesPage() {
               </p>
             </div>
             <p className="max-w-[46ch] text-sm leading-relaxed text-silver">
-              Two cars at the same address on one visit. The discount applies
-              to the lower-priced of the two, and the offer ends{" "}
+              Two vehicles at the same address on one visit. The discount
+              applies to the lower-priced of the two, and the offer ends{" "}
               {promoEndsLabel()}.
             </p>
           </div>
@@ -59,200 +59,128 @@ export default function PackagesPage() {
 
       <section className="border-t border-line py-16 md:py-24">
         <div className="wrap">
-        <div className="grid gap-px bg-line lg:grid-cols-3">
-          {packages.map((p) => (
-            <div
-              key={p.slug}
-              className={`flex flex-col p-8 md:p-10 ${
-                p.featured ? "bg-chalk text-ink" : "bg-ink"
-              }`}
-            >
-              <div className="flex items-baseline justify-between gap-4">
+          <div className="grid gap-px bg-line lg:grid-cols-3">
+            {vehicleClasses.map((vc) => (
+              <div key={vc.slug} className="bg-ink p-8 md:p-10">
                 <h2
-                  className={`font-display text-2xl font-bold ${
-                    p.featured ? "text-ink" : "text-bone"
-                  }`}
+                  className="font-display text-2xl font-bold text-bone"
                   style={{ fontStretch: "94%", letterSpacing: "-0.03em" }}
                 >
-                  {p.name}
+                  {vc.label}
                 </h2>
-                {p.featured && (
-                  <span className="bg-carmine px-2 py-1 font-display text-[0.6rem] font-semibold uppercase tracking-[0.18em] text-bone">
-                    Most booked
-                  </span>
-                )}
+                <p className="mt-2 text-sm text-muted">{vc.examples}</p>
+
+                <dl className="mt-8">
+                  <div className="spec">
+                    <dt>Interior</dt>
+                    <dd>{formatUsd(vc.interior)}</dd>
+                  </div>
+                  <div className="spec">
+                    <dt>Exterior</dt>
+                    <dd>{formatUsd(vc.exterior)}</dd>
+                  </div>
+                  <div className="spec">
+                    <dt>Both together</dt>
+                    <dd className="font-semibold text-carmine-lt">
+                      {formatUsd(vc.bundleTotal)}{" "}
+                      <span className="font-normal text-muted">
+                        (save {formatUsd(bundleSavings(vc))})
+                      </span>
+                    </dd>
+                  </div>
+                </dl>
+
+                <Link href="/contact" className="btn btn-ghost mt-8">
+                  Get a quote
+                  <Arrow />
+                </Link>
               </div>
+            ))}
+          </div>
 
-              <p
-                className={`mt-3 text-sm leading-relaxed ${
-                  p.featured ? "text-ink/70" : "text-silver"
-                }`}
-              >
-                {p.positioning}
-              </p>
-
-              <p className="mt-7 flex items-baseline gap-2">
-                <span
-                  className={`font-display text-[0.65rem] font-semibold uppercase tracking-[0.18em] ${
-                    p.featured ? "text-ink/55" : "text-muted"
-                  }`}
-                >
-                  From
-                </span>
-                <span
-                  className={`font-display text-5xl font-bold ${
-                    p.featured ? "text-ink" : "text-bone"
-                  }`}
-                  style={{ fontStretch: "92%", letterSpacing: "-0.04em" }}
-                >
-                  {formatUsd(p.fromPrice)}
-                </span>
-              </p>
-              <p
-                className={`mt-1.5 text-sm ${
-                  p.featured ? "text-ink/60" : "text-muted"
-                }`}
-              >
-                {p.duration} · coupe &amp; sedan
-              </p>
-
-              <p
-                className={`mt-6 border-t pt-6 text-sm leading-relaxed ${
-                  p.featured ? "border-ink/15 text-ink/75" : "border-line text-silver"
-                }`}
-              >
-                {p.summary}
-              </p>
-
-              <h3
-                className={`mt-8 font-display text-[0.65rem] font-semibold uppercase tracking-[0.18em] ${
-                  p.featured ? "text-ink/55" : "text-muted"
-                }`}
-              >
-                Included
-              </h3>
-              <ul className="mt-4 flex-1 space-y-2.5">
-                {p.includes.map((inc) => (
-                  <li
-                    key={inc}
-                    className={`flex gap-3 text-sm leading-relaxed ${
-                      p.featured ? "text-ink/80" : "text-silver"
-                    }`}
-                  >
-                    <span
-                      aria-hidden="true"
-                      className={`mt-2 block h-px w-3 shrink-0 ${
-                        p.featured ? "bg-carmine" : "bg-carmine-lt"
-                      }`}
-                    />
-                    {inc}
-                  </li>
-                ))}
-              </ul>
-
-              {p.excludes && (
-                <>
-                  <h3
-                    className={`mt-8 font-display text-[0.65rem] font-semibold uppercase tracking-[0.18em] ${
-                      p.featured ? "text-ink/55" : "text-muted"
-                    }`}
-                  >
-                    Not in this tier
-                  </h3>
-                  <ul className="mt-4 space-y-2">
-                    {p.excludes.map((ex) => (
-                      <li
-                        key={ex}
-                        className={`text-sm leading-relaxed ${
-                          p.featured ? "text-ink/55" : "text-muted"
-                        }`}
-                      >
-                        {ex}
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              )}
-
-              <Link
-                href="/contact"
-                className={`btn mt-8 ${p.featured ? "" : "btn-ghost"}`}
-              >
-                Get a quote
-                <Arrow />
-              </Link>
-            </div>
-          ))}
-        </div>
+          <div className="mt-10 border border-line p-7">
+            <h3 className="rank-sub text-bone">What is included</h3>
+            <p className="prose-body mt-4">
+              Interior means a full vacuum, hot-water extraction on carpets
+              and cloth seating, and stain and odor treatment. Exterior means
+              a hand wash, wheel and wheel well cleaning, and a spray sealant
+              finish. See the{" "}
+              <Link href="/services/interior-detailing" className="link-inline">
+                interior
+              </Link>{" "}
+              and{" "}
+              <Link href="/services/exterior-detailing" className="link-inline">
+                exterior
+              </Link>{" "}
+              service pages for the full breakdown.
+            </p>
+          </div>
         </div>
       </section>
 
       <section className="border-t border-line bg-ink-2 py-16 md:py-24">
         <div className="wrap grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
-            <p className="mark">Vehicle size</p>
+            <p className="mark">Furniture &amp; upholstery</p>
             <h2 className="rank-section mt-5 text-bone">
-              A three-row is not a sedan with extra seats.
+              Priced by piece, not by a flat rate.
             </h2>
             <p className="prose-body mt-6">
-              A larger vehicle is more panels to decontaminate, more carpet to
-              extract and more glass to finish. We price by size rather than
-              quoting a car rate and adding the difference at handover.
+              A loveseat and a ten-foot sectional are not the same job, and
+              neither are fabric and leather. We quote furniture and
+              upholstery cleaning after seeing photos of the piece, indoors or
+              out.
             </p>
+            <Link
+              href="/services/furniture-upholstery-cleaning"
+              className="link-more mt-6 inline-flex"
+            >
+              Furniture &amp; upholstery cleaning
+              <Arrow />
+            </Link>
           </div>
 
           <div className="lg:col-span-8">
-            <dl>
-              {sizeTiers.map((t) => (
-                <div
-                  key={t.label}
-                  className="grid gap-2 border-t border-line py-6 sm:grid-cols-12 sm:gap-6"
+            <div className="flex flex-col gap-6 bg-chalk p-8 md:flex-row md:items-center md:justify-between md:gap-10 md:p-10">
+              <div>
+                <span className="bg-carmine px-2 py-1 font-display text-[0.6rem] font-semibold uppercase tracking-[0.18em] text-bone">
+                  Do this first
+                </span>
+                <h3
+                  className="mt-4 font-display text-2xl font-bold text-ink"
+                  style={{ fontStretch: "94%", letterSpacing: "-0.03em" }}
                 >
-                  <dt className="sm:col-span-5">
-                    <span className="rank-sub block text-bone">{t.label}</span>
-                    <span className="mt-1 block text-sm text-muted">
-                      {t.examples}
-                    </span>
-                  </dt>
-                  <dd className="font-display text-2xl font-bold text-carmine-lt sm:col-span-3 sm:text-right">
-                    {t.surcharge === 0
-                      ? "Base rate"
-                      : `+ ${formatUsd(t.surcharge)}`}
-                  </dd>
-                  <dd className="text-sm text-silver sm:col-span-4">
-                    Applied on top of every package starting price.
-                  </dd>
-                </div>
-              ))}
-            </dl>
-
-            <div className="mt-10 border border-line p-7">
-              <h3 className="rank-sub text-bone">
-                Condition is the other half
-              </h3>
-              <p className="prose-body mt-4">
-                Heavy pet hair, a spill that has soaked into the underlay,
-                years of unprotected paint in a shaded street. All of it adds
-                labor, and we would rather tell you before we start than
-                explain it afterwards. Send photos with your request if you are
-                unsure. It makes the quote far more accurate.
-              </p>
-              <p className="mt-5 text-sm text-muted">
-                Every price on this page is a starting point, not a final
-                quote. You get the real number before any work begins. Call{" "}
-                <a href={site.phone.href} className="link-inline">
-                  {site.phone.display}
-                </a>
-                .
-              </p>
+                  Send photos and a detailed message.
+                </h3>
+                <p className="mt-3 max-w-[58ch] text-sm leading-relaxed text-ink/75">
+                  Condition changes the price more than size does. Heavy pet
+                  hair, a spill that has soaked in, or a stain that has been
+                  there for months all add real time. A couple of photos and a
+                  few sentences up front means the number we give you is the
+                  number you pay.
+                </p>
+              </div>
+              <Link href="/contact" className="btn shrink-0">
+                Send photos &amp; get a quote
+                <Arrow />
+              </Link>
             </div>
+
+            <p className="mt-6 text-sm text-muted">
+              Car prices on this page are real, published rates, not a
+              starting estimate. Call{" "}
+              <a href={site.phone.href} className="link-inline">
+                {site.phone.display}
+              </a>{" "}
+              if you would rather talk it through.
+            </p>
           </div>
         </div>
       </section>
 
       <CtaBand
-        title="Not sure which level you need?"
-        body="Describe the car and what is bothering you about it. If a cheaper package will get you the result you want, that is the one we will quote."
+        title="Not sure what you need?"
+        body="Describe the vehicle or the furniture and what is bothering you about it. We will tell you honestly what it needs."
       />
     </>
   );

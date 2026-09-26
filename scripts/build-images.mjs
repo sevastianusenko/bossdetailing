@@ -39,14 +39,11 @@ const manifest = [
   { file: "interior-detailing.jpg", id: "4956687487505992978.jpg", size: CARD_REAL, real: true },
   // Real job: full-size SUV under snow foam on a residential driveway.
   { file: "exterior-detailing.jpg", id: "4956687487505992955.jpg", size: CARD_REAL, real: true },
-  { file: "paint-correction.jpg", id: 5233258, size: CARD },
-  { file: "ceramic-coating.jpg", id: 17216298, size: CARD },
-  { file: "headlight-restoration.jpg", id: 4870702, size: CARD },
-  { file: "pre-sale-detailing.jpg", id: 16510645, size: CARD },
+  { file: "furniture-cleaning.jpg", id: 4401537, size: CARD },
   { file: "fleet-detailing.jpg", id: 33623769, size: CARD },
 
   // Page heroes
-  { file: "services-hero.jpg", id: 14615262, size: WIDE },
+  { file: "services-hero.jpg", id: 33093191, size: WIDE },
   { file: "packages-hero.jpg", id: 6872572, size: WIDE },
   { file: "faq-hero.jpg", id: 14908957, size: WIDE },
   { file: "about-hero.jpg", id: 35149470, size: WIDE },
@@ -58,11 +55,6 @@ const manifest = [
   { file: "area-vancouver.jpg", id: 186077, size: WIDE },
   { file: "area-portland.jpg", id: 19665312, size: WIDE },
   { file: "area-suburb.jpg", id: 5353883, size: WIDE },
-
-  // Correction comparison. The "after" is the source frame; the "before" is
-  // the SAME frame with simulated clear-coat marring composited over it, so
-  // the slider compares like with like and claims nothing about a real job.
-  { file: "correction-after.jpg", id: 29755711, size: WIDE, grade: { brightness: 1.45, a: 1.18, b: 6 } },
 
   // Gallery
   { file: "gallery-1.jpg", id: "4956687487505992954.jpg", size: SQUARE_REAL, real: true },
@@ -159,63 +151,6 @@ for (const item of manifest) {
   console.log(`✓ ${item.file}  (pexels ${item.id})`);
 }
 
-/* ── The simulated "before" frame ──────────────────────────────────────── */
-{
-  const target = join(outDir, "correction-before.jpg");
-  const [w, h] = WIDE;
-
-  // Fine circular marring, the pattern a rotary wash brush leaves behind.
-  const arcs = [];
-  const cx = w * 0.46;
-  const cy = h * 0.42;
-  for (let i = 0; i < 1300; i++) {
-    const r = 40 + Math.random() * (w * 0.55);
-    const a0 = Math.random() * Math.PI * 2;
-    const a1 = a0 + 0.25 + Math.random() * 0.9;
-    const x0 = cx + r * Math.cos(a0);
-    const y0 = cy + r * Math.sin(a0) * 0.62;
-    const x1 = cx + r * Math.cos(a1);
-    const y1 = cy + r * Math.sin(a1) * 0.62;
-    const op = (0.3 + Math.random() * 0.55).toFixed(3);
-    arcs.push(
-      `<path d="M${x0.toFixed(1)} ${y0.toFixed(1)} A${r.toFixed(1)} ${(r * 0.62).toFixed(1)} 0 0 1 ${x1.toFixed(1)} ${y1.toFixed(1)}" stroke="#ffffff" stroke-opacity="${op}" stroke-width="${(0.7 + Math.random()).toFixed(2)}" fill="none"/>`,
-    );
-  }
-
-  const overlay = Buffer.from(
-    `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}">
-       <defs>
-         <radialGradient id="v" cx="46%" cy="42%" r="62%">
-           <stop offset="0%" stop-color="#fff" stop-opacity="0.55"/>
-           <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
-         </radialGradient>
-         <mask id="m"><rect width="${w}" height="${h}" fill="url(#v)"/></mask>
-       </defs>
-       <g mask="url(#m)">${arcs.join("")}</g>
-     </svg>`,
-  );
-
-  const base = grade(sharp(download(29755711)), WIDE, {
-    brightness: 1.45,
-    a: 1.18,
-    b: 6,
-  })
-    // Marring scatters the reflection: a little less contrast and a thin
-    // grey veil. Kept subtle on purpose — the scratches do the work, and an
-    // exposure change would prove nothing about correction.
-    .linear(0.93, 11)
-    .modulate({ saturation: 0.78 })
-    .blur(0.35);
-
-  await sharp(await base.toBuffer())
-    .composite([{ input: overlay, blend: "screen" }])
-    .jpeg({ quality: 80, progressive: true, mozjpeg: true })
-    .toFile(target);
-
-  built.push("correction-before.jpg");
-  console.log("✓ correction-before.jpg  (simulated marring over the same frame)");
-}
-
 writeFileSync(
   join(outDir, "CREDITS.txt"),
   [
@@ -231,7 +166,6 @@ writeFileSync(
     ...manifest
       .filter((m) => !m.real)
       .map((m) => `  ${m.file}  https://www.pexels.com/photo/${m.id}/`),
-    "correction-before.jpg  simulated clear-coat marring over correction-after.jpg",
   ].join("\n"),
 );
 

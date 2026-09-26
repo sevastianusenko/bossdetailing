@@ -6,32 +6,32 @@
 export const processSteps: { n: string; title: string; body: string }[] = [
   {
     n: "01",
-    title: "Tell us the vehicle and the space",
-    body: "Call or send the form with the make, model and rough condition, plus where the car will be: driveway, office lot, street, garage. The space decides what is possible on the day, so we ask about it first instead of discovering it on arrival.",
+    title: "Send photos and a detailed message",
+    body: "Tell us the vehicle or furniture, its condition, and where it will be, plus a few photos if you can. The more we see up front, the more accurate the quote and the fewer surprises on the day.",
   },
   {
     n: "02",
-    title: "You get a scope and a real window",
-    body: "We come back with what the vehicle actually needs, what it will cost, and how long it will take. If a cheaper service gets you what you want, we say so. If your space rules out coating work, we say that too, before you commit.",
+    title: "You get a scope and a real price",
+    body: "We come back with what the job actually needs, what it will cost, and how long it will take. If a smaller service gets you what you want, we say so.",
   },
   {
     n: "03",
-    title: "We arrive self-contained",
-    body: "Water, filtration, power, extraction and lighting all come with us. Nothing plugs into your house and nothing connects to your spigot. Setup takes a few minutes and leaves your driveway usable around us.",
+    title: "Confirm water and power",
+    body: "We need access to an outdoor water spigot and a standard electrical outlet at the address. We confirm that with you before booking, not on arrival, so nobody wastes a trip.",
   },
   {
     n: "04",
-    title: "Decontamination before anything else",
-    body: "Wheels and wells first, while the paint is cold, then a foam dwell, then a safe contact wash. Iron removal and clay treatment strip out what is bonded into the finish. Every later stage depends on this one being done properly.",
+    title: "We arrive and set up",
+    body: "Vacuums, extraction equipment, brushes and products come off the vehicle. Setup takes a few minutes and leaves your driveway usable around us.",
   },
   {
     n: "05",
     title: "The work you booked",
-    body: "Extraction and steam inside, polishing, sealing or coating outside. On correction jobs you approve a test spot before the rest of the car is touched, so what you are buying is something you have already seen on your own paint.",
+    body: "Interior extraction, exterior wash, or furniture cleaning, done properly rather than quickly. We treat stains and odors at the source instead of masking them.",
   },
   {
     n: "06",
     title: "Walkaround, then handover",
-    body: "We go over the car with you in good light: what came out, what did not, and why. You get straight aftercare, covering how to wash it, what to keep off it, and when it is worth coming back.",
+    body: "We go over the work with you before we leave: what came out, what did not, and why. Straight answers, no upsell for its own sake.",
   },
 ];

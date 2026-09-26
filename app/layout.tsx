@@ -34,9 +34,8 @@ const DIRECTION_CONTRACT = `<!--
   carmine action colour, hairline rules, compressed Archivo display against
   Public Sans text, label/value spec rows in place of cards, and full-bleed
   photography as the only decoration.
-  STORY: The visitor learns the rig is self-contained, sees corrected paint
-  proved rather than claimed, self-qualifies on a tier, then calls or files
-  a work order.
+  STORY: The visitor learns what we bring and what we need from them, sees
+  the price plainly by vehicle size, then calls or files a work order.
   FIRST VIEWPORT: Full-bleed dark vehicle photograph with a clear-coat sweep
   crossing it; headline at hero rank on the lower left; call and quote
   actions side by side; a hairline fact strip pinned to the bottom edge.
@@ -52,7 +51,7 @@ export const metadata: Metadata = {
     template: "%s | Boss Auto Detailing",
   },
   description:
-    "Self-contained mobile auto detailing across Vancouver WA and Portland OR. Interior extraction, hand wash, paint correction and ceramic coating at your home or office. Call (509) 224-8299.",
+    "Mobile auto detailing and furniture cleaning across Vancouver WA and Portland OR. Interior detailing, exterior washing and upholstery cleaning at your home or office. Call (509) 224-8299.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -61,14 +60,14 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: "Boss Auto Detailing | Mobile Detailing, Vancouver WA & Portland OR",
     description:
-      "We bring the shop to your driveway. Interior extraction, decontamination, paint correction and ceramic coating across both sides of the Columbia.",
+      "We bring the equipment to your driveway. Interior detailing, exterior washing and furniture cleaning across both sides of the Columbia.",
     images: [{ url: "/images/hero.jpg", width: 1600, height: 900, alt: site.name }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Boss Auto Detailing | Vancouver WA & Portland OR",
     description:
-      "Self-contained mobile detailing. Paint correction and ceramic coating at your address.",
+      "Mobile car detailing and furniture cleaning. Interior, exterior and upholstery care at your address.",
     images: ["/images/hero.jpg"],
   },
   robots: { index: true, follow: true },

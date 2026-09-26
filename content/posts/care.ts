@@ -79,7 +79,7 @@ export const carePosts: Post[] = [
       "Vacuuming removes what is loose. Extraction removes what has dissolved into the fiber, which is most of what you can smell.",
     hero: "/images/interior-detailing.jpg",
     heroAlt: "Cleaned driver footwell and all-weather mat after an interior detail",
-    services: ["interior-detailing", "pre-sale-detailing"],
+    services: ["interior-detailing"],
     areas: ["portland-or", "happy-valley-or"],
     sections: [
       {
@@ -133,13 +133,13 @@ export const carePosts: Post[] = [
     metaTitle: "Road De-Icer and Your Car: Northwest Winter Car Care",
     description:
       "Why Northwest winter road treatment is harder on vehicles than people expect, where the damage starts, and what actually prevents it.",
-    published: "2026-09-03",
+    published: "2026-09-25",
     category: "Seasonal",
     excerpt:
       "By February the wheel barrels on most daily drivers here carry a baked-on layer that only comes off by hand. Here is what put it there.",
     hero: "/images/gallery-8.jpg",
     heroAlt: "Engine bay cleaned and conservatively dressed",
-    services: ["exterior-detailing", "ceramic-coating"],
+    services: ["exterior-detailing"],
     areas: ["vancouver-wa", "ridgefield-wa", "camas-wa"],
     sections: [
       {
@@ -171,17 +171,17 @@ export const carePosts: Post[] = [
         ],
       },
       {
-        h: "What protection does and does not do",
+        h: "What a sealant does and does not do",
         p: [
-          "A sealant or a coating on the paint reduces how strongly brine film bonds, which makes each wash faster and gentler. That is a real benefit, and it is the main reason a coated car is easier to keep clean through a Northwest winter.",
-          "What protection does not do is stop corrosion under the car. Coatings go on paint, not on bare seams and suspension components. Anyone selling a paint coating as rust prevention is overselling it.",
+          "A sealant on the paint reduces how strongly brine film bonds, which makes each wash faster and gentler. That is a real benefit, and it is one reason a sealed car is easier to keep clean through a Northwest winter.",
+          "What it does not do is stop corrosion under the car. A sealant goes on paint, not on bare seams and suspension components. Anyone selling paint protection as rust prevention is overselling it.",
         ],
       },
       {
         h: "A realistic winter routine here",
         p: [
           "Wash more often than in summer, even though the car gets dirty again immediately, because the point is removing chloride rather than looking clean. Prioritize wheels, wells and the underside over a perfect finish on the hood.",
-          "Then plan a decontamination detail in early spring. By March the lower panels are carrying a bonded layer of iron and brine film that only chemical and clay treatment will remove, and getting it off before warm weather bakes it in is the difference between a season of wear and a lasting mark.",
+          "Then plan a proper exterior detail in early spring. By March the lower panels are carrying a bonded layer of brine film that a quick rinse will not shift, and getting it off before warm weather sets it further in is worth the appointment.",
         ],
       },
     ],
@@ -193,13 +193,13 @@ export const carePosts: Post[] = [
     metaTitle: "Moss, Algae and Green Film on Cars: A Northwest Guide",
     description:
       "Why cars parked under Pacific Northwest tree cover grow organic film, where it takes hold first, and how to remove it without damaging seals or trim.",
-    published: "2026-09-03",
+    published: "2026-09-25",
     category: "Seasonal",
     excerpt:
       "Nine months of damp shade grows things. On a car that lives under a canopy in Portland or West Linn, that shows up as a green haze in the seals long before you notice it on the paint.",
     hero: "/images/area-portland.jpg",
     heroAlt: "A steel bridge spanning the river between the two cities we work in",
-    services: ["exterior-detailing", "ceramic-coating"],
+    services: ["exterior-detailing"],
     areas: ["portland-or", "west-linn-or", "lake-oswego-or"],
     sections: [
       {
@@ -226,7 +226,7 @@ export const carePosts: Post[] = [
         h: "What it does if left",
         p: [
           "On seals and rubber, organic growth holds moisture against the material and accelerates the drying and cracking that would take years otherwise. On trim it leaves staining that outlasts the growth itself.",
-          "On paint the risk is less about the growth and more about what comes with it. A damp organic film traps sap, pollen and road film against the clear coat, and that combination is what produces etching over a warm spell.",
+          "On paint the risk is less about the growth and more about what comes with it. A damp organic film traps sap, pollen and road film against the surface, and that combination is worse than either one alone.",
         ],
         note: "It is also why a car under trees can look dull even after a wash. The film is in the texture, not on top of it.",
       },
@@ -241,7 +241,7 @@ export const carePosts: Post[] = [
         h: "Slowing the return",
         p: [
           "You often cannot change where the car parks. What you can change is how easily the surface holds moisture.",
-          "Protected paint and conditioned seals shed water faster, which removes the standing damp that growth depends on. Combined with a shorter wash interval through autumn, when leaf fall and rain arrive together, that keeps the problem to an annoyance rather than a repair.",
+          "Sealed paint and conditioned seals shed water faster, which removes the standing damp that growth depends on. Combined with a shorter wash interval through autumn, when leaf fall and rain arrive together, that keeps the problem to an annoyance rather than a repair.",
         ],
       },
     ],
@@ -249,52 +249,53 @@ export const carePosts: Post[] = [
 
   {
     slug: "preparing-for-a-mobile-detailer",
-    title: "What a mobile detailer needs at your house or apartment",
-    metaTitle: "Preparing for a Mobile Detailer: Space, Access and Parking",
+    title: "What we need at your house or office to get the job done",
+    metaTitle: "Preparing for Mobile Detailing: Water, Power and Space",
     description:
-      "How much room a mobile detailing job needs, what to do about condo garages and street parking, and the five minutes of prep that make the visit go smoothly.",
-    published: "2026-09-03",
+      "What space, water and power access a mobile detailing visit actually needs, and how to tell in advance whether your address will work.",
+    published: "2026-09-25",
     category: "Practical",
     excerpt:
-      "The most common reason a mobile appointment goes badly is not the car. It is the space, and that is entirely solvable in advance.",
+      "The most common reason a mobile appointment cannot happen is not the car. It is the address, and that is worth checking before you book.",
     hero: "/images/hero.jpg",
     heroAlt: "Detailer pressure-washing an SUV on a residential driveway",
-    services: ["exterior-detailing", "ceramic-coating"],
+    services: ["exterior-detailing", "interior-detailing"],
     areas: ["portland-or", "vancouver-wa", "west-linn-or"],
     sections: [
       {
-        h: "How much room is actually needed",
+        h: "The two things we actually need",
         p: [
-          "As a working rule: the vehicle, plus roughly one car width beside it, plus somewhere within a reasonable hose run for the rig. All four doors need to open fully, because interior work is done from inside the cabin.",
-          "That is less than people assume. A standard two-car driveway is comfortable. A single driveway usually works. A tight condo stall depends entirely on what is beside it.",
+          "We are not a fully self-contained rig. We bring the vacuums, the extraction machine, brushes, buckets, chemicals and towels, but we rely on you for two things: an outdoor water spigot (a standard garden hose bib works) and a nearby electrical outlet.",
+          "This is deliberate, not a limitation we are hiding. Carrying a water tank and a generator to every job adds real cost, and we would rather put that money into better products and a fair price than into hauling equipment most homes and businesses already have.",
         ],
       },
       {
-        h: "Power and water, or the absence of them",
+        h: "Where this works well",
         p: [
-          "Ask this before booking, because it decides what is possible. A self-contained rig carries its own water, filtration, pressure system and generator, so it needs nothing from your building. An operator without that setup needs an outdoor spigot and an outlet, which rules out most apartments, most offices and every street spot.",
-          "If you live in a building, this is the difference between the appointment happening and being cancelled on arrival.",
-        ],
-      },
-      {
-        h: "Buildings, lots and street parking",
-        p: [
-          "Each has its own wrinkle and each is manageable with a phone call in advance.",
+          "Most houses, most office buildings and most commercial properties have both a spigot and an outlet accessible from outside, which covers the large majority of bookings without any issue.",
         ],
         list: [
-          "Condo and apartment garages: most allow detailing in a resident stall with prior notice, and some want a certificate of insurance on file. Give your detailer the building name and let them handle it.",
-          "Office lots: usually straightforward, but a facilities manager appreciates being told. Weekday service while you work is the easiest booking there is.",
-          "Street parking in inner Portland: legal spots work with a self-contained rig. Tell them which side you usually park on and how tight it gets.",
-          "Steep driveways in West Linn or Bolton: fine, but the rig needs somewhere level, so flag the grade when booking.",
+          "Houses with a driveway: almost always straightforward, the spigot is usually right at the garage",
+          "Office and business lots: usually fine if the property has an outdoor tap, worth a quick check with facilities",
+          "Commercial yards for fleet work: normally set up for exactly this kind of access",
         ],
       },
       {
-        h: "Correction and coating need more than space",
+        h: "Where it gets harder",
         p: [
-          "Multi-day work has one hard requirement: a garage, carport or genuinely covered space. Coatings must cure dry and protected, and a Northwest autumn will not cooperate.",
-          "If your garage is snug, send dimensions before committing. A good detailer will tell you honestly whether the job will work there rather than discovering it halfway through day one.",
+          "A few situations need a second look before booking, and we would rather flag them than promise something we cannot deliver.",
         ],
-        note: "If there is no covered space anywhere, sealant is the sensible protection and any honest operator will say so.",
+        list: [
+          "Apartments and condos with no private outdoor tap: exterior work usually is not possible, though interior-only work can still work with just a power outlet",
+          "Pure street parking with no host building: without a spigot and outlet nearby, this generally does not work for us",
+          "A building that restricts outside vendors from using utilities: worth checking with management before booking",
+        ],
+      },
+      {
+        h: "How much space beyond that",
+        p: [
+          "As a working rule: the vehicle, plus roughly one car width beside it, so all four doors can open fully for interior work. A standard driveway is comfortable. A tight spot depends entirely on what is next to it.",
+        ],
       },
       {
         h: "Five minutes of prep that help",
@@ -302,23 +303,66 @@ export const carePosts: Post[] = [
           "Nothing here is required, and all of it makes the day better.",
         ],
         list: [
+          "Point out the spigot and the outlet when we arrive, or mention their location when you book",
           "Take out anything valuable or personal. Nobody wants to move your belongings around",
           "Empty the trunk and cargo area if interior work is booked",
-          "Remove child seats if you want the area underneath done properly",
           "Move a second car so there is working room on at least one side",
           "Say up front if there is pet hair, a spill or a smell, so the hours are scheduled for it",
-          "Leave the keys, and plan to be reachable rather than present",
         ],
       },
     ],
     faq: [
       {
         q: "Do I need to be home the whole time?",
-        a: "No. Most people hand over the keys and get on with their day. You should be reachable by phone, and it is worth being there at handover so we can walk the car with you in good light.",
+        a: "No. Most people hand over the keys and get on with their day, as long as the spigot and outlet are accessible without you there. It is worth being there at handover so we can walk the work through with you.",
       },
       {
-        q: "What happens if it rains?",
-        a: "Washing and interior work go ahead. Correction and coating need dry covered space, and if the forecast or your space will not allow it we reschedule rather than compromise the result.",
+        q: "What if I'm not sure whether my address will work?",
+        a: "Tell us about the space when you reach out: a photo of the driveway or the parking situation is usually enough for us to tell you plainly whether it works, before you commit to anything.",
+      },
+    ],
+  },
+
+  {
+    slug: "indoor-vs-outdoor-furniture-cleaning",
+    title: "Indoor versus outdoor furniture cleaning: what actually changes",
+    metaTitle: "Indoor vs Outdoor Furniture Cleaning: What's Different",
+    description:
+      "Why a sofa and a set of patio cushions need different cleaning approaches, and what that means for how long it takes and what to expect.",
+    published: "2026-09-25",
+    category: "Furniture",
+    excerpt:
+      "The tool is the same. What is actually growing in the fabric, and how fast it dries, is not.",
+    hero: "/images/furniture-cleaning.jpg",
+    heroAlt: "Upholstered sofa cushion being cleaned with a fabric extraction tool",
+    services: ["furniture-upholstery-cleaning"],
+    areas: ["vancouver-wa", "portland-or"],
+    sections: [
+      {
+        h: "One tool, two very different jobs",
+        p: [
+          "We clean indoor and outdoor furniture with the same core equipment: hot-water extraction that pulls soil and moisture out of the fiber rather than just wetting the surface. What differs is what is actually in the fabric, and how the piece dries afterward.",
+        ],
+      },
+      {
+        h: "Indoors: everyday soiling and specific stains",
+        p: [
+          "A sofa or a mattress mostly collects body oils, dust, and specific incidents: a spilled drink, a pet accident, a kid's marker. Each responds to a different pre-treatment, which is why we ask about the history of a stain rather than treating everything the same way.",
+          "Indoor pieces dry relatively fast, since they sit in a climate-controlled room, so a job here usually means the furniture is back in normal use within a few hours.",
+        ],
+      },
+      {
+        h: "Outdoors: moisture, mildew and green film",
+        p: [
+          "Patio cushions, outdoor sofas and dining sets deal with a different problem entirely: Northwest damp sitting on fabric for days at a time. That produces mildew and the same green organic film that grows on cars parked under trees.",
+          "Extraction has to pull that dampness and growth out, not just clean the visible surface, or the smell and the staining come back within weeks. Outdoor pieces also need more drying time before they go back into use, since re-covering damp cushions just restarts the cycle.",
+        ],
+      },
+      {
+        h: "What to expect either way",
+        p: [
+          "Send photos of the piece and any specific problem spots, and let us know if it lives indoors or outdoors. That tells us which approach to bring and gives you an accurate quote before we show up, rather than a surprise once we start.",
+        ],
       },
     ],
   },

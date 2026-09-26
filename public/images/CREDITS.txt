@@ -13,12 +13,9 @@ Replace these with the client's own work as it is documented.
   hero.jpg  https://www.pexels.com/photo/4876639/
   rig.jpg  https://www.pexels.com/photo/20042048/
   area.jpg  https://www.pexels.com/photo/32403749/
-  paint-correction.jpg  https://www.pexels.com/photo/5233258/
-  ceramic-coating.jpg  https://www.pexels.com/photo/17216298/
-  headlight-restoration.jpg  https://www.pexels.com/photo/4870702/
-  pre-sale-detailing.jpg  https://www.pexels.com/photo/16510645/
+  furniture-cleaning.jpg  https://www.pexels.com/photo/4401537/
   fleet-detailing.jpg  https://www.pexels.com/photo/33623769/
-  services-hero.jpg  https://www.pexels.com/photo/14615262/
+  services-hero.jpg  https://www.pexels.com/photo/33093191/
   packages-hero.jpg  https://www.pexels.com/photo/6872572/
   faq-hero.jpg  https://www.pexels.com/photo/14908957/
   about-hero.jpg  https://www.pexels.com/photo/35149470/
@@ -28,9 +25,7 @@ Replace these with the client's own work as it is documented.
   area-vancouver.jpg  https://www.pexels.com/photo/186077/
   area-portland.jpg  https://www.pexels.com/photo/19665312/
   area-suburb.jpg  https://www.pexels.com/photo/5353883/
-  correction-after.jpg  https://www.pexels.com/photo/29755711/
   gallery-5.jpg  https://www.pexels.com/photo/248395/
   gallery-6.jpg  https://www.pexels.com/photo/12190248/
   gallery-7.jpg  https://www.pexels.com/photo/28571826/
   gallery-8.jpg  https://www.pexels.com/photo/8237050/
-correction-before.jpg  simulated clear-coat marring over correction-after.jpg

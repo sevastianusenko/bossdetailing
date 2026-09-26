@@ -7,7 +7,6 @@ import { site } from "@/lib/site";
 import { PageHero } from "@/components/PageHero";
 import { RequestForm } from "@/components/RequestForm";
 import { Arrow, PhoneGlyph } from "@/components/Arrow";
-import { JobAnatomy } from "@/components/JobAnatomy";
 import { JsonLd, breadcrumbSchema, serviceSchema } from "@/components/JsonLd";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -146,10 +145,6 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
-      {/* The multi-day services carry the stage-by-stage record. */}
-      {(service.slug === "paint-correction" ||
-        service.slug === "ceramic-coating") && <JobAnatomy />}
-
       {/* Local reach: every service page carries the geography */}
       <section className="border-t border-line py-16 md:py-20">
         <div className="wrap">
@@ -183,9 +178,9 @@ export default async function ServicePage({ params }: Props) {
               Get a quote for {service.name.toLowerCase()}.
             </h2>
             <p className="prose-body mt-6">
-              Send the vehicle, the city and where it will be parked. We come
-              back with a scope, a price and a window, usually the same
-              working day.
+              Send a few photos, the city, and whether the address has water
+              and power access. We come back with a scope, a price and a
+              window, usually the same working day.
             </p>
             <a
               href={site.phone.href}

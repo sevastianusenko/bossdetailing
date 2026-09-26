@@ -11,7 +11,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Detailing Advice for Northwest Drivers",
   description:
-    "Straight answers on paint correction, ceramic coating, interior extraction and Pacific Northwest car care, written for Vancouver WA and Portland OR.",
+    "Straight answers on pricing, interior extraction, furniture cleaning and Pacific Northwest car care, written for Vancouver WA and Portland OR.",
   alternates: { canonical: "/blog" },
 };
 

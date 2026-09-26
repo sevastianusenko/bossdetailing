@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { areas } from "@/lib/areas";
 import { services } from "@/lib/services";
-import { sizeTiers } from "@/lib/packages";
+import { vehicleClasses } from "@/lib/packages";
 import { site } from "@/lib/site";
 import { Arrow, PhoneGlyph } from "./Arrow";
 
@@ -24,14 +24,98 @@ const timings = [
   "Flexible, I have a date in mind",
 ];
 
+const accessOptions = [
+  "Yes, an outdoor spigot and outlet are available",
+  "Not sure, let's check",
+  "No, I don't think I have those",
+];
+
+const MAX_PHOTOS = 3;
+const MAX_DIMENSION = 1600;
+const JPEG_QUALITY = 0.72;
+
+/**
+ * Downscales an image in the browser before it ever leaves the device.
+ * A phone photo can run 3 to 8 MB, and Vercel's serverless functions cap
+ * the incoming request body well below what three or four of those would
+ * add up to. Compressing client-side keeps a normal phone photo under a few
+ * hundred KB, comfortably inside that limit.
+ *
+ * EXIF orientation is not corrected here. For a quoting photo that is a
+ * cosmetic issue, not a functional one, and not worth the extra complexity.
+ * Returns null on any failure so a bad file never blocks the rest of the
+ * request from submitting.
+ */
+async function compressImage(file: File): Promise<File | null> {
+  if (!file.type.startsWith("image/")) return null;
+
+  try {
+    const dataUrl = await new Promise<string>((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result as string);
+      reader.onerror = () => reject(reader.error);
+      reader.readAsDataURL(file);
+    });
+
+    const img = await new Promise<HTMLImageElement>((resolve, reject) => {
+      const el = new window.Image();
+      el.onload = () => resolve(el);
+      el.onerror = () => reject(new Error("Could not decode image"));
+      el.src = dataUrl;
+    });
+
+    const scale = Math.min(1, MAX_DIMENSION / Math.max(img.width, img.height));
+    const canvas = document.createElement("canvas");
+    canvas.width = Math.max(1, Math.round(img.width * scale));
+    canvas.height = Math.max(1, Math.round(img.height * scale));
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return null;
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+    const blob = await new Promise<Blob | null>((resolve) =>
+      canvas.toBlob(resolve, "image/jpeg", JPEG_QUALITY),
+    );
+    if (!blob) return null;
+
+    const base = file.name.replace(/\.[^.]+$/, "") || "photo";
+    return new File([blob], `${base}.jpg`, { type: "image/jpeg" });
+  } catch {
+    return null;
+  }
+}
+
 export function RequestForm({ defaultService }: { defaultService?: string }) {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
+  const [photos, setPhotos] = useState<File[]>([]);
+  const [compressing, setCompressing] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  async function onPhotosChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const files = Array.from(e.target.files ?? []).slice(0, MAX_PHOTOS);
+    if (!files.length) return;
+
+    setCompressing(true);
+    const compressed = await Promise.all(files.map(compressImage));
+    setCompressing(false);
+    setPhotos(compressed.filter((f): f is File => f !== null));
+  }
+
+  function removePhoto(i: number) {
+    setPhotos((prev) => prev.filter((_, idx) => idx !== i));
+    if (fileInputRef.current) fileInputRef.current.value = "";
+  }
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries());
+
+    // Text fields ride the native FormData. The file input itself carries no
+    // name, so it is never included here; the compressed photos below are
+    // appended in its place.
+    const data = new FormData(form);
+    for (const photo of photos) data.append("photos", photo, photo.name);
 
     setStatus("sending");
     setError(null);
@@ -39,8 +123,7 @@ export function RequestForm({ defaultService }: { defaultService?: string }) {
     try {
       const res = await fetch("/api/request", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: data,
       });
 
       if (!res.ok) {
@@ -52,6 +135,7 @@ export function RequestForm({ defaultService }: { defaultService?: string }) {
 
       setStatus("sent");
       form.reset();
+      setPhotos([]);
     } catch (err) {
       setStatus("error");
       setError(
@@ -130,23 +214,30 @@ export function RequestForm({ defaultService }: { defaultService?: string }) {
 
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="field">
-          <span>Vehicle *</span>
+          <span>Vehicle or furniture *</span>
           <input
             className="control"
             name="vehicle"
             required
-            placeholder="2019 Audi Q5, black"
+            placeholder="2019 Audi Q5, black, or a gray fabric sectional"
           />
         </label>
 
         <label className="field">
           <span>Size</span>
-          <select className="control" name="size" defaultValue={sizeTiers[0].label}>
-            {sizeTiers.map((t) => (
-              <option key={t.label} value={t.label}>
-                {t.label}
+          <select
+            className="control"
+            name="size"
+            defaultValue={vehicleClasses[0].label}
+          >
+            {vehicleClasses.map((vc) => (
+              <option key={vc.slug} value={vc.label}>
+                {vc.label}
               </option>
             ))}
+            <option value="Furniture, not a vehicle">
+              Furniture, not a vehicle
+            </option>
           </select>
         </label>
       </div>
@@ -200,6 +291,27 @@ export function RequestForm({ defaultService }: { defaultService?: string }) {
       </div>
 
       <label className="field">
+        <span>Water &amp; power access *</span>
+        <select
+          className="control"
+          name="access"
+          required
+          defaultValue={accessOptions[0]}
+        >
+          {accessOptions.map((a) => (
+            <option key={a} value={a}>
+              {a}
+            </option>
+          ))}
+        </select>
+        <p className="mt-2 text-xs text-muted">
+          We need an outdoor water spigot and a power outlet at the address.
+          If you are not sure, pick &ldquo;let&rsquo;s check&rdquo; and we
+          will help you figure it out.
+        </p>
+      </label>
+
+      <label className="field">
         <span>Timing</span>
         <select className="control" name="timing" defaultValue={timings[0]}>
           {timings.map((t) => (
@@ -216,9 +328,46 @@ export function RequestForm({ defaultService }: { defaultService?: string }) {
           className="control"
           name="notes"
           rows={4}
-          placeholder="Dog in the car, coffee spill on the passenger carpet, swirls under the streetlight. The more you tell us, the more accurate the quote."
+          placeholder="Dog in the car, coffee spill on the passenger carpet, a sofa with a wine stain. The more you tell us, the more accurate the quote."
         />
       </label>
+
+      <div className="field">
+        <span>Photos (optional, but helps a lot)</span>
+        <input
+          ref={fileInputRef}
+          className="control"
+          type="file"
+          accept="image/*"
+          multiple
+          onChange={onPhotosChange}
+        />
+        <p className="mt-2 text-xs text-muted">
+          {compressing
+            ? "Preparing your photos…"
+            : `Up to ${MAX_PHOTOS} photos. We resize them automatically before sending.`}
+        </p>
+
+        {photos.length > 0 && (
+          <ul className="mt-3 space-y-1.5">
+            {photos.map((p, i) => (
+              <li
+                key={p.name + i}
+                className="flex items-center justify-between gap-3 text-sm text-silver"
+              >
+                <span className="truncate">{p.name}</span>
+                <button
+                  type="button"
+                  onClick={() => removePhoto(i)}
+                  className="shrink-0 text-xs uppercase tracking-wide text-muted transition-colors hover:text-carmine-lt"
+                >
+                  Remove
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
 
       {status === "error" && error && (
         <p
@@ -234,7 +383,7 @@ export function RequestForm({ defaultService }: { defaultService?: string }) {
       )}
 
       <div className="mt-2 flex flex-col gap-4 sm:flex-row sm:items-center">
-        <button type="submit" className="btn" disabled={busy}>
+        <button type="submit" className="btn" disabled={busy || compressing}>
           {busy ? "Sending…" : "Send the request"}
           {!busy && <Arrow />}
         </button>
